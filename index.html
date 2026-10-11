@@ -1,0 +1,2861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Municipality of Cortes | Official Website</title>
+  <link rel="icon" href="/OFF LOGO.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&family=Montserrat:wght@800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="portal.css?v=80">
+  <script src="cms.js"></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#mainContent" onclick="document.getElementById('mainContent').focus();return false;">Skip to main content</a>
+
+  <!-- ── STICKY HEADER GROUP (utility bar + header/nav stay together on scroll) ── -->
+  <div class="site-header-group">
+    <!-- ── TOP UTILITY BAR ── -->
+    <div class="top-utility-bar">
+      <div class="tub-inner">
+        <div class="tub-left">
+          <img class="tub-flag" src="/flag-ph.svg" alt="" aria-hidden="true">
+          <span>Official Website of the Municipality of Cortes</span>
+        </div>
+        <div class="tub-right">
+          <form class="tub-search" role="search" onsubmit="doSearch();return false;">
+            <label for="headerSearch" class="sr-only">Search the website</label>
+            <input type="search" id="headerSearch" placeholder="Search offices, services, projects, news…" autocomplete="off">
+            <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+          </form>
+          <a href="https://www.gov.ph/" target="_blank" rel="noopener">GOV.PH</a>
+          <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">OFFICIAL GAZETTE</a>
+          <a href="https://www.facebook.com/lgucortes.bohol/" target="_blank" rel="noopener" aria-label="Cortes LGU on Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SITE HEADER + NAVBAR (single row) ── -->
+    <div class="site-header">
+      <a class="header-brand" href="#home" onclick="showPage('home');return false;" aria-label="Municipality of Cortes — Home">
+        <img src="/OFF LOGO.png" alt="Official Seal of the Municipality of Cortes" width="64" height="64"
+          onerror="this.style.background='#e8f0f8';this.style.borderRadius='50%'">
+        <span class="brand-text">
+          <span class="brand-title">Municipality of Cortes</span>
+          <span class="brand-sub">Province of Bohol · Official Website</span>
+        </span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open main menu" aria-expanded="false" aria-controls="navInner" onclick="toggleMobileNav()">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-inner" id="navInner">
+          <div class="nav-mobile-head">
+            <span>Menu</span>
+            <button type="button" class="nav-close" onclick="closeMobileNav()" aria-label="Close menu"><i class="fa fa-xmark"></i></button>
+          </div>
+          <a href="#home" id="nav-home" class="active" onclick="showPage('home');closeMobileNav();return false;">Home</a>
+          <div class="nav-item">
+            <a href="#lgu" id="nav-lgu" onclick="handleNavClick(event,'lgu')">LGU</a>
+            <div class="nav-dropdown">
+              <a href="#lgu" onclick="showPage('lgu');closeMobileNav();return false;">About the LGU</a>
+              <a href="#history" onclick="showPage('history');closeMobileNav();return false;">History</a>
+              <a href="#missionvision" onclick="showPage('missionvision');closeMobileNav();return false;">Mission &amp; Vision</a>
+              <a href="#officials" onclick="showPage('officials');closeMobileNav();return false;">Municipal Officials</a>
+              <a href="#departments" onclick="showPage('departments');closeMobileNav();return false;">Departments &amp; Offices</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#governance" id="nav-gov" onclick="handleNavClick(event,'governance')">Governance</a>
+            <div class="nav-dropdown">
+              <a href="#governance/legislative" onclick="goGov('legislative');closeMobileNav();return false;">Legislative</a>
+              <a href="#governance/executive" onclick="goGov('executive');closeMobileNav();return false;">Executive</a>
+              <a href="#governance/national" onclick="goGov('national');closeMobileNav();return false;">National Agencies</a>
+              <a href="#budget" onclick="showPage('budget');closeMobileNav();return false;">Budget &amp; Planning / Transparency</a>
+            </div>
+          </div>
+          <a href="#departments" id="nav-offices" onclick="showPage('departments');closeMobileNav();return false;">Offices</a>
+          <div class="nav-item">
+            <a href="#services" id="nav-services" onclick="handleNavClick(event,'services')">Services</a>
+            <div class="nav-dropdown">
+              <a href="#services" onclick="showPage('services');closeMobileNav();return false;">Services Directory</a>
+              <a href="#charter" onclick="showPage('charter');closeMobileNav();return false;">Citizen's Charter</a>
+              <a href="#downloads" onclick="showPage('downloads');closeMobileNav();return false;">Downloads &amp; Forms</a>
+            </div>
+          </div>
+          <a href="#projects" id="nav-projects" onclick="showPage('projects');closeMobileNav();return false;">Projects</a>
+          <a href="#news" id="nav-news" onclick="showPage('news');closeMobileNav();return false;">News</a>
+          <a href="#tourism" id="nav-tourism" onclick="showPage('tourism');closeMobileNav();return false;">Tourism</a>
+          <a href="#contacts" id="nav-contacts" onclick="showPage('contacts');closeMobileNav();return false;">Contact Us</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div id="pageScaleViewport">
+  <div id="pageScaleInner">
+
+
+
+  <div id="navOverlay" class="nav-overlay" onclick="closeMobileNav()"></div>
+
+  <!-- ════════════════════════════ HOME PAGE ════════════════════════════ -->
+  <div class="site-layout">
+    <main class="site-content" id="mainContent" tabindex="-1">
+
+  <div id="home-page" class="page active">
+
+    <!-- HERO IMAGE SLIDER (up to 5 slides, managed in Admin → Hero Slider) -->
+    <div id="heroSliderContainer"><!-- populated live by renderHeroSlider() in portal.js --></div>
+
+    <!-- QUICK ACCESS -->
+    <section class="qa-section">
+      <div class="inner">
+        <div class="qa-head">
+          <div class="qa-title">Quick Access</div>
+          <a href="#services" class="qa-more-link" onclick="showPage('services');return false;">All Services <i class="fa fa-chevron-right"></i></a>
+        </div>
+        <div class="qa-grid qa-grid--10">
+          <a href="#services" class="qa-card" onclick="showPage('services');return false;">
+            <div class="qa-icon"><i class="fa fa-th-list"></i></div>
+            <div class="qa-label">Services Directory</div>
+          </a>
+          <a href="#charter" class="qa-card" onclick="showPage('charter');return false;">
+            <div class="qa-icon"><i class="fa fa-file-signature"></i></div>
+            <div class="qa-label">Citizen's Charter</div>
+          </a>
+          <a href="#downloads" class="qa-card" onclick="showPage('downloads');return false;">
+            <div class="qa-icon"><i class="fa fa-file-arrow-down"></i></div>
+            <div class="qa-label">Downloadable Forms</div>
+          </a>
+          <a href="#departments" class="qa-card" onclick="showPage('departments');return false;">
+            <div class="qa-icon"><i class="fa fa-building-columns"></i></div>
+            <div class="qa-label">Municipal Offices</div>
+          </a>
+          <a href="#officials" class="qa-card" onclick="showPage('officials');return false;">
+            <div class="qa-icon"><i class="fa fa-users"></i></div>
+            <div class="qa-label">Municipal Officials</div>
+          </a>
+          <a href="#projects" class="qa-card" onclick="showPage('projects');return false;">
+            <div class="qa-icon"><i class="fa fa-diagram-project"></i></div>
+            <div class="qa-label">Projects</div>
+          </a>
+          <a href="#news" class="qa-card" onclick="showPage('news');return false;">
+            <div class="qa-icon"><i class="fa fa-newspaper"></i></div>
+            <div class="qa-label">News &amp; Announcements</div>
+          </a>
+          <a href="#budget" class="qa-card" onclick="showPage('budget');return false;">
+            <div class="qa-icon"><i class="fa fa-shield-halved"></i></div>
+            <div class="qa-label">Transparency &amp; Budget</div>
+          </a>
+          <a href="#tourism" class="qa-card" onclick="showPage('tourism');return false;">
+            <div class="qa-icon"><i class="fa fa-umbrella-beach"></i></div>
+            <div class="qa-label">Tourism</div>
+          </a>
+          <a href="#contacts" class="qa-card" onclick="showPage('contacts');return false;">
+            <div class="qa-icon"><i class="fa fa-phone"></i></div>
+            <div class="qa-label">Contact Us</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1-CORTES LGU BANNER -->
+    <section class="lgu-banner-section">
+      <div class="inner">
+        <div class="lgu-banner-card">
+          <img src="/1-cortes-lgu-banner.png" alt="1-Cortes LGU — Mayor, Vice Mayor, and Sangguniang Bayan">
+          <div class="lgu-banner-footer">
+            <span class="lgu-banner-text">One Cortes, One Leadership, One Vision for every Corteseño.</span>
+            <button type="button" class="slide-btn slide-btn--solid" onclick="showPage('officials')">Meet Your Officials</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST NEWS (big featured slider) + UPCOMING EVENT sidebar -->
+    <section class="home-news-section">
+      <div class="inner">
+        <div class="home-news-layout">
+          <div class="home-news-main">
+            <div class="home-block-head">
+              <div class="home-block-title">Latest News</div>
+              <a href="#" class="home-block-more" onclick="showPage('news');return false;">View All News <i class="fa fa-chevron-right"></i></a>
+            </div>
+            <div class="home-block-rule"></div>
+            <div class="news-slider news-slider--big" id="homeNewsSlider">
+              <div class="news-slider-track" id="homeNewsSliderTrack"><!-- populated live by renderHomeLatestNews() in portal.js --></div>
+              <button class="news-slider-arrow news-slider-prev" onclick="newsSliderGo(-1)" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+              <button class="news-slider-arrow news-slider-next" onclick="newsSliderGo(1)" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
+              <div class="news-slider-dots" id="homeNewsSliderDots"></div>
+            </div>
+          </div>
+          <div class="home-news-side">
+            <div class="home-block-head">
+              <div class="home-block-title">Upcoming Event</div>
+              <a href="#" class="home-block-more" onclick="showPage('news');return false;">View All Events <i class="fa fa-chevron-right"></i></a>
+            </div>
+            <div class="home-block-rule"></div>
+            <div id="homeUpcomingEvent"><!-- populated live by renderHomeUpcomingEvent() in portal.js --></div>
+
+            <div class="home-block-head" style="margin-top:1.8rem;">
+              <div class="home-block-title">Recently Archived</div>
+              <a href="#news/archive" class="home-block-more" onclick="openNewsArchive();return false;">News Archive <i class="fa fa-chevron-right"></i></a>
+            </div>
+            <div class="home-block-rule"></div>
+            <ul class="home-archived-list" id="homeArchivedList"><!-- populated live by renderHomeArchived() in portal.js --></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICIAL ANNOUNCEMENTS -->
+    <section class="home-ann-section">
+      <div class="inner">
+        <div class="home-block-head">
+          <div class="home-block-title">Official Announcements</div>
+          <a href="#" class="home-block-more" onclick="showPage('news');return false;">View All Announcements <i class="fa fa-chevron-right"></i></a>
+        </div>
+        <div class="home-block-rule"></div>
+        <div class="ann-grid" id="homeAnnouncementsGrid"><!-- populated live by renderHomeAnnouncements() in portal.js --></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS / DEVELOPMENT UPDATES (tabular dashboard) -->
+    <section class="home-proj-section">
+      <div class="inner">
+        <div class="home-block-head">
+          <div class="home-block-title">Projects &amp; Development Updates</div>
+          <a href="#projects" class="home-block-more" onclick="showPage('projects');return false;">View All Projects <i class="fa fa-chevron-right"></i></a>
+        </div>
+        <div class="home-block-rule"></div>
+        <div id="homeProjectsTable"><!-- populated live by renderHomeProjects() in portal.js --></div>
+      </div>
+    </section>
+
+    <!-- MAYOR'S CORNER -->
+    <section class="mc-section">
+      <div class="inner">
+        <div class="mc-card" id="mayorCornerCard"><!-- populated live by renderMayorCorner() in portal.js --></div>
+      </div>
+    </section>
+
+    <!-- EMERGENCY HOTLINES -->
+    <section class="hotline-section">
+      <div class="inner">
+        <img src="/cortes-hotline.png" alt="Cortes Emergency Hotlines — Philippine Unified 911, Cortes PNP, Cortes BFP, TaRSIER 117, Cortes MDRRMO" class="hotline-image">
+      </div>
+    </section>
+
+    <!-- TOURISM SPOTS (featured) -->
+    <section class="tourism-section">
+      <div class="inner">
+        <div class="sec-label" style="text-align:center;">Discover Cortes Highlights</div>
+        <div class="sec-title" style="text-align:center;">Experience Cortes' Defining Landmarks</div>
+        <div class="sec-desc" style="text-align:center;max-width:680px;margin:0 auto 2.6rem;">Before heading out to the beaches, take time to explore the historical foundations and vibrant local spots unique to our municipality.</div>
+        <div class="tour-grid" id="homeTourismGrid"><!-- populated live by renderHomeTourismSpots() in portal.js --></div>
+        <div style="text-align:center;margin-top:2.4rem;">
+          <a href="#" class="home-block-more" onclick="showPage('tourism');return false;">View All Tourist Spots <i class="fa fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /home-page -->
+
+
+  <!-- ════════════════════════════ LGU PAGE ════════════════════════════ -->
+  <div id="lgu-page" class="page">
+
+    <div class="page-banner" style="background:var(--cw-green);">
+     <div class="pg-label">Local Government Unit</div>
+      <h1>About the LGU</h1>
+      <p>The Local Government Unit of Cortes is committed to transparent, accountable, and responsive governance.</p>
+    </div> 
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="about-cortes-grid">
+          <div class="about-cortes-text">
+            <div class="sec-label">About</div>
+            <div class="sec-title">About Cortes</div>
+            <p class="sec-desc" style="margin-top:1rem;">Cortes is a municipality in the province of Bohol, known for its welcoming communities and coastal charm. The Local Government Unit blends transparent, people-centered governance with a deep commitment to serving every Corteseño.</p>
+            <p class="sec-desc" style="margin-top:1rem;">It continues to grow as a progressive, eco-tourism-driven municipality — anchored on inclusive development for every barangay of Cortes.</p>
+          </div>
+          <div class="about-slider" id="aboutSliderContainer"><!-- populated live by renderAboutSlider() in portal.js --></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="about-cortes-grid">
+          <div class="about-slider" id="communitySliderContainer"><!-- populated live by renderCommunitySlider() in portal.js --></div>
+          <div class="about-cortes-text">
+            <p class="sec-desc">Beyond its coastal charm, Cortes is home to a growing local economy anchored on agriculture, fisheries, and small enterprise. Its barangays blend traditional livelihoods with emerging opportunities in eco-tourism and public service innovation.</p>
+            <p class="sec-desc" style="margin-top:1rem;">Residents and visitors alike are drawn to the municipality's relaxed pace, scenic coastline, and strong sense of community. Local celebrations and barangay fiestas showcase the warmth and hospitality that define every Corteseño, making Cortes a genuine reflection of Bohol's rich culture and heritage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="history-teaser">
+          <h2>History of Cortes</h2>
+          <p>Cortes has a rich historical background rooted in its coastal and agricultural heritage. From a quiet farming and fishing community, it has grown into a progressive municipality that continues to honor its roots while embracing sustainable development for every barangay.</p>
+          <button type="button" class="history-teaser-btn" onclick="showPage('history')">Read Full History</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="mv-grid">
+          <div class="mv-card">
+            <h3>Our Mission</h3>
+            <p>To deliver transparent, accountable, and people-centered governance — providing quality public
+              services, sustainable livelihood opportunities, and a safe, resilient community for every
+              Corteseño.</p>
+          </div>
+          <div class="mv-card">
+            <h3>Our Vision</h3>
+            <p>A progressive, eco-tourism-driven municipality of empowered and God-loving citizens, governed
+              by transparent leadership and anchored on inclusive growth for every barangay of Cortes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="history-teaser" style="max-width:100%;margin-bottom:2.2rem;">
+          <h2>Cortes Hymn</h2>
+          <p>Experience the pride of Cortes through its official hymn that reflects unity, culture, and identity.</p>
+        </div>
+        <div class="hymn-grid">
+          <div class="hymn-lyrics">
+            <h3>Lyrics</h3>
+            <div id="cortesHymnLyrics"><!-- populated live by renderCortesHymn() in portal.js --></div>
+          </div>
+          <div class="hymn-video">
+            <iframe src="https://www.youtube.com/embed/P6nrkd-U-RA" title="Cortes Hymn" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--off)">
+      <div class="inner">
+        <div class="brgy-stats-strip">
+          <div class="brgy-stat-box"><span class="num">14</span><span class="lbl">Barangays</span></div>
+          <div class="brgy-stat-box"><span class="num">18,976</span><span class="lbl">Total Population (2024)</span></div>
+          <div class="brgy-stat-box"><span class="num">De la Paz</span><span class="lbl">Most Populous</span></div>
+          <div class="brgy-stat-box"><span class="num">Nov 2, 2026</span><span class="lbl">Next Barangay &amp; SK Elections</span></div>
+        </div>
+
+        <h2 class="brgy-section-title">The Barangays of Cortes</h2>
+
+        <div class="brgy-search-wrap">
+          <i class="fa fa-search"></i>
+          <input type="text" id="brgySearch" placeholder="Search a barangay…" oninput="filterBrgy(this.value)">
+        </div>
+
+        <div class="brgy-grid" id="brgyGrid">
+
+          <div class="brgy-card" data-name="de la paz">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-place-of-worship"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay De la Paz</div>
+                <div class="brgy-head-sub">Punong Barangay: Alan Rufino Galindo Pondoc</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 3,084</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">505-6355</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Alan Rufino Galindo Pondoc <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Jesus Roquelito Hubac Malanog</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Lorna Polio Pondoc</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Mary Maxine Epe Jandayan</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Jesus Garrote Jumamil</li><li>Leodegario Pondoc Rocas</li><li>Mardilenda Limbaroc Fortich</li><li>Allan Iway Garrote</li><li>Rowena Uy Opamin</li><li>Joseph Carnecer Pondoc</li><li>Junrey Igay Espigadera</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="fatima">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-dove"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Fatima</div>
+                <div class="brgy-head-sub">Punong Barangay: Eduardo Tabigue Concon</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,302</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Eduardo Tabigue Concon <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Retchel Fajardo Podador</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Paz Concon Estoque</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Ma. Rossana Balate Oring</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Christine Bangi Biloy</li><li>Vicente Tabigue Balate</li><li>Rudy Oñez Alipoyo</li><li>Gabriel Quizan Sumaya</li><li>Riza Balate Oring</li><li>Sabina Oñez Fajardo</li><li>Marcelo Mulit Manito JR.</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="loreto">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-cross"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Loreto</div>
+                <div class="brgy-head-sub">Punong Barangay: Zosimo Ferno Jumila JR.</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,556</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">0909-162-0561</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Zosimo Ferno Jumila JR. <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Jedelyn Boctoto Gementiza</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Levy Tolop Flores</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">John Lucky Strike Famat Paña</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Junifel Apog Humoc II</li><li>Allan Oñez Lumanta</li><li>Avelina Boctoto Onod</li><li>Septem Maceren Sanchez</li><li>German Batino Tolop</li><li>Jaime Villas Oñez</li><li>Stephen Namoc Paña</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="lourdes">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-church"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Lourdes</div>
+                <div class="brgy-head-sub">Punong Barangay: Macario Zapatos Ongyot JR.</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 2,471</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Macario Zapatos Ongyot JR. <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Antonia Perito Taray</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Paterna Tumarao Lumba</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Mherry Christ H. Garcines</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Rene Tambis Piquero</li><li>Renante Quino Balani</li><li>Patrick Asoy Tambis</li><li>Josefina Onyot Balabag</li><li>Joselito Camporedondo Malcampo</li><li>Susana Onyot Balihon</li><li>Russel Anunciado Ongyot</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="malayo norte">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-compass"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Malayo Norte</div>
+                <div class="brgy-head-sub">Punong Barangay: Lucrecio Bucia Tabigue</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,514</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">411-5173</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Lucrecio Bucia Tabigue <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Zenaida Polo Padonia</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Ma. Marbe Penaso Tima</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">John Nichol Tima Longakit</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Wilfreda Tabigue Flores</li><li>Eduardo Lacea Mortejo</li><li>Pedro Bucia Tima</li><li>Bebian Dagamac Tima</li><li>Rufina Hubac Tabigue</li><li>Florentina Samon Tabigue</li><li>Juanita Hubay Charcos</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="malayo sur">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-compass"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Malayo Sur</div>
+                <div class="brgy-head-sub">Punong Barangay: Josefina Agoot Tubac</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 787</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">0938-599-1392</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Josefina Agoot Tubac <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Carmelita Sansan Alce</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Rosalie Hubac Sansan</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Jeanne Ellen Apostol Calatrava</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Nestor Tabigue Maca</li><li>Matea Canono Lampa</li><li>Ma. Gleza Lumaad Jabines</li><li>Eva Jaojao Balani</li><li>Dionisito Dionson Buntod</li><li>Irenea Darunday Payot</li><li>Cherylyn Neri Lumanas</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="monserrat">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-mountain"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Monserrat</div>
+                <div class="brgy-head-sub">Punong Barangay: Jeremias Nangka Napitan</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 502</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Jeremias Nangka Napitan <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Jehaziel Balate Cagape</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Zenaida Batingal Carbon</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Gesriel Manatad Labor</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Janrey Cosmod Samonte</li><li>Fernando Nangka Batingal</li><li>Saturnino Paurnia Lumba</li><li>Emiliano Lumba Samonte</li><li>Randy Doldolia Payot</li><li>Gerald Lumaad Napitan</li><li>Reynaldo Nangka Balate</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="new lourdes">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-hands-praying"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay New Lourdes</div>
+                <div class="brgy-head-sub">Punong Barangay: Hermie Conejero Virginia JR.</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,273</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Hermie Conejero Virginia JR. <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Maria Belen Montajes Solijon</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Marlyn Sansan Regulacion</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Micaela Anne Sansan Lumanas</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Allan Oring Payot</li><li>Aquino Lumanas Solijon</li><li>Dexter Calio Darunday</li><li>Joseph Hinay Lumanas</li><li>Zosima Oring Ocon</li><li>Julie Ann Paduelan Sun-oc</li><li>Marcelo Sansan Mustasa</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="patrocinio">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-seedling"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Patrocinio</div>
+                <div class="brgy-head-sub">Punong Barangay: Aires Ale Torralba</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 945</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Aires Ale Torralba <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Marilou Monta Chatto</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Maritess Chatto Cervantes</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Jercilie Libatona Domasin</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Tita Adlao Namoc</li><li>Jonathan Ligan Hangad</li><li>Mitzi Pergamino Gomonid</li><li>Romel Tubo Jagus</li><li>Saturnino Araco Arcayena</li><li>Richard Sobrado Ligan</li><li>Noel Tabigue Ocon</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="poblacion">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-city"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Poblacion</div>
+                <div class="brgy-head-sub">Punong Barangay: Andrew Marilla Dagamac</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,260</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Andrew Marilla Dagamac <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Carmelita Magdalunes Loquias</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Emma Angelie Justiniani Omictin</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Louraine May Tambis Tatad</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Richard Tatad Solijon</li><li>Melinda Reyes Renegado</li><li>Joseph Tumarao Magdalunes</li><li>Moises Tumarao Renegado JR.</li><li>Cornelio Minoras Nalzaro JR.</li><li>Aleta Trinidad Payot Simbajon</li><li>King Jun Cosmod Agunod</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="rosario">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-heart"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Rosario</div>
+                <div class="brgy-head-sub">Punong Barangay: Alfredo Binatero Calacat JR</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 739</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">411-5842</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Alfredo Binatero Calacat JR <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Girlie Lumaad Batingal</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Venus Lumaad Labares</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Rodel Lagang Jagunos</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Jovencio Madera Jumamil</li><li>Alfreda Napal Jumamil</li><li>Teofredo Ocon Tabigue</li><li>Charlene Gomez Madera</li><li>Marichu Lumaad Apog</li><li>Maria Arlene Ligan Calaylay</li><li>Angel Velez Ipong</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="salvador">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-shield-heart"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Salvador</div>
+                <div class="brgy-head-sub">Punong Barangay: Elmer Uy Alderite</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,249</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Elmer Uy Alderite <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Zenaida Gentallan Eleccion</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Ma. Ferbelou Laolao Dagamac</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Marc Theodore Pocot Concon</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Fredie Balani Añasco</li><li>Ma. Sheryl Concon Cascajo</li><li>John Alvin Josoy Hubac</li><li>Jeffrey Concon Cepe</li><li>Ceferino Pedoche Limbaroc JR.</li><li>Nemesia Masibay Jubac</li><li>Judith Concon Bonhayag</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="san roque">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-map-pin"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay San Roque</div>
+                <div class="brgy-head-sub">Punong Barangay: Cirilo Patos Tolop JR.</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,224</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">0946-947-5313</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Cirilo Patos Tolop JR. <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Merissa Dumalag Gabi</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Anabel Senon Guno</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Jymelle Gabi Bitas</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Ricardo Patac Terec</li><li>Roquelito Sepe Tima</li><li>Temistocles Paga Calsa</li><li>Christopher Oring Tumarao</li><li>Ronald Monteza Lacea</li><li>Teofreda Tolop Sinon</li><li>Evangeline Hagutin Sinon</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>
+
+          <div class="brgy-card" data-name="upper de la paz">
+            <button class="brgy-card-head" onclick="toggleBrgy(this)">
+              <div class="brgy-head-icon"><i class="fa fa-arrow-up"></i></div>
+              <div class="brgy-head-info">
+                <div class="brgy-head-name">Barangay Upper de la Paz</div>
+                <div class="brgy-head-sub">Punong Barangay: Perla Chua Villapaz</div>
+              </div>
+              <div class="brgy-head-pop"><i class="fa fa-users fa-fw"></i> 1,070</div>
+              <i class="fa fa-chevron-down brgy-head-chevron"></i>
+            </button>
+            <div class="brgy-card-body">
+              <div class="brgy-verified"><i class="fa fa-circle-check"></i> Contact Information &amp; Officials</div>
+              <div class="brgy-off-grid">
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-phone fa-fw"></i> Phone</span><span class="brgy-off-val">505-2325</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-user-tie fa-fw"></i> Punong Barangay</span><span class="brgy-off-val">Perla Chua Villapaz <span class="brgy-term">(2023 - 2026 term)</span></span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-pen-fancy fa-fw"></i> Barangay Secretary</span><span class="brgy-off-val">Karen Curiba Nguho</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-coins fa-fw"></i> Barangay Treasurer</span><span class="brgy-off-val">Lucina Sotto Gurion</span></div>
+                <div class="brgy-off-row"><span class="brgy-off-label"><i class="fa fa-star fa-fw"></i> SK Chairperson</span><span class="brgy-off-val">Kayla Solijon Maslog</span></div>
+              </div>
+              <div class="brgy-kagawad-title"><i class="fa fa-user-group fa-fw"></i> Sangguniang Barangay Members (Kagawads)</div>
+              <ul class="brgy-kagawad-list">
+                <li>Ricardo Tabigue Maslog</li><li>Alex Incio Dahab</li><li>Roger Solijon Libas</li><li>Juspertino Coquilla Solijon</li><li>Elvejoy Quijano Sotto</li><li>Julito N. Zapatos</li><li>Wilson Jumamil Casilac</li>
+              </ul>
+              <div class="brgy-note"><i class="fa fa-triangle-exclamation fa-fw"></i> Officials shown reflect the 2023–2026 term. Always verify with the barangay hall before relying on this information for official transactions. Source: Barangay Directory / DILG masterlist.</div>
+            </div>
+          </div>        </div>
+
+        <p class="brgy-source-line">Barangay official data compiled from the Barangay Directory (Barangay Directory / DILG masterlist), reflecting the 2023–2026 term. For the most current information, please contact the barangay hall directly.</p>
+      </div>
+    </section>
+
+  </div><!-- /lgu-page -->
+
+
+  <!-- ════════════════════════════ GOVERNANCE PAGE ════════════════════════════ -->
+  <div id="governance-page" class="page">
+
+    <div class="page-banner" 
+     style="background-image: url('/GOVERNANCE\ BG.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;">
+      <div class="pg-label">Transparency & Accountability</div>
+      <h1>Governance</h1>
+      <p></p>
+    </div>
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="gov-intro">
+          <div class="sec-label">Organizational Structure</div>
+          <div class="sec-title">How the Municipality of Cortes Is Organized</div>
+          <p class="sec-desc">Municipal offices are grouped into the <strong>Legislative</strong> and <strong>Executive</strong> branches of the local government. National government agencies operating or represented within the LGU are listed separately. Select an office to see its head, services, projects, and contact information.</p>
+          <div class="gov-jump" role="navigation" aria-label="Governance sections">
+            <a href="#governance/legislative" onclick="goGov('legislative');return false;"><i class="fa fa-landmark"></i> Legislative</a>
+            <a href="#governance/executive" onclick="goGov('executive');return false;"><i class="fa fa-building-columns"></i> Executive</a>
+            <a href="#governance/national" onclick="goGov('national');return false;"><i class="fa fa-flag"></i> National Agencies</a>
+          </div>
+        </div>
+        <div id="governanceBranches"><!-- populated live by renderGovernancePage() in portal.js --></div>
+      </div>
+    </section>
+
+  </div><!-- /governance-page -->
+
+  <!-- ════════════════════════════ MUNICIPAL OFFICIALS PAGE ════════════════════════════ -->
+  <div id="officials-page" class="page">
+    <div class="page-banner" style="background-image: url('/GOVERNANCE\ BG.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="pg-label">LGU</div>
+      <h1>Municipal Officials</h1>
+      <p>The elected officials and office heads serving the people of Cortes.</p>
+    </div>
+    <section class="ordinances-section">
+      <div class="inner">
+        <div class="off-spotlight-wrap" id="officialsSpotlight"><!-- populated live by renderOfficialsSpotlight() in portal.js --></div>
+
+        <div class="pin-officials-head">
+          <h1>Sangguniang Bayan Members</h1>
+          <p>The elected and appointed leaders serving the people of Cortes with dedication and integrity.</p>
+        </div>
+        <div class="pin-officials-grid" id="officialsPageGrid"><!-- populated live by renderOfficialsPageGrid() in portal.js --></div>
+
+        <div class="pin-officials-head" style="margin-top:2.6rem;">
+          <h1>The Department and Office Heads</h1>
+          <p>The officials leading each municipal department and office in service to Cortes.</p>
+        </div>
+        <div class="pin-officials-grid" id="departmentHeadsGrid"><!-- populated live by renderDepartmentHeads() in portal.js --></div>
+      </div>
+    </section>
+  </div><!-- /officials-page -->
+
+  <!-- ════════════════════════════ OFFICE PROFILE PAGE (one template for every office) ════════════════════════════ -->
+  <div id="office-page" class="page">
+    <section class="op-section">
+      <div class="inner" id="officeProfile"><!-- populated live by renderOfficeProfile() in portal.js --></div>
+    </section>
+  </div><!-- /office-page -->
+
+
+  <!-- ════════════════════════════ NEWS PAGE ════════════════════════════ -->
+  <div id="news-page" class="page">
+
+    <div class="page-banner" style="background:var(--navy-mid)">
+      <div class="pg-label">Stay Informed</div>
+      <h1>News & Announcements</h1>
+      <p>Official news, press releases, and public announcements from the Municipality of Cortes.</p>
+    </div>
+
+    <section class="nw-section">
+      <div class="inner">
+
+        <!-- FILTER BAR -->
+        <div class="nw-filter-bar">
+          <div class="nw-filter-field">
+            <label for="newsFilterDate">Date</label>
+            <input type="date" id="newsFilterDate" onchange="applyNewsFilters()">
+          </div>
+          <div class="nw-filter-field">
+            <label for="newsFilterCategory">Category</label>
+            <select id="newsFilterCategory" onchange="applyNewsFilters()">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div class="nw-filter-field">
+            <label for="newsFilterOffice">Office</label>
+            <select id="newsFilterOffice" onchange="applyNewsFilters()">
+              <option value="">All Offices</option>
+            </select>
+          </div>
+          <div class="nw-filter-field">
+            <label for="newsFilterStatus">Status</label>
+            <select id="newsFilterStatus" onchange="setNewsView(this.value)">
+              <option value="current">Current</option>
+              <option value="archived">Recently Archived</option>
+              <option value="all">All</option>
+            </select>
+          </div>
+          <div class="nw-filter-field nw-filter-field--search">
+            <label for="newsFilterSearch">Search</label>
+            <div class="nw-search-row">
+              <input type="text" id="newsFilterSearch" placeholder="Search news…" oninput="applyNewsFilters()" onkeydown="if(event.key==='Enter'){event.preventDefault();applyNewsFilters();}">
+              <button type="button" class="nw-search-btn" onclick="applyNewsFilters()" aria-label="Search"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="nw-view-tabs" role="tablist" aria-label="News view">
+          <button type="button" role="tab" id="nwTab-current" class="active" onclick="setNewsView('current')">Current News</button>
+          <button type="button" role="tab" id="nwTab-archived" onclick="setNewsView('archived')"><i class="fa fa-box-archive"></i> Recently Archived</button>
+        </div>
+
+        <!-- ALL NEWS HEAD + PAGINATION -->
+        <div class="nw-list-head">
+          <h2 id="newsListTitle">Current News</h2>
+          <div class="nw-pagination" id="newsPagination"><!-- populated live by renderNewsPagination() in portal.js --></div>
+        </div>
+
+        <div class="nw-grid" id="newsPageGrid"><!-- populated live by renderNewsPage() in portal.js --></div>
+
+        <!-- ANNOUNCEMENTS (separate section, right after News & Events) -->
+        <div class="ann-section-head">
+          <h2 id="annListTitle">Announcements</h2>
+        </div>
+        <div class="ann-grid" id="announcementsPageGrid"><!-- populated live by renderAnnouncementsPageGrid() in portal.js --></div>
+
+        <!-- EVENTS CALENDAR -->
+        <div class="ann-section-head">
+          <h2>Events Calendar</h2>
+        </div>
+        <div class="evcal-layout">
+          <div class="evcal-card">
+            <div class="evcal-legend">
+              <span class="evcal-legend-label">LEGEND:</span>
+              <span class="evcal-legend-item"><i style="background:#c0392b"></i> Regular Holiday</span>
+              <span class="evcal-legend-item"><i style="background:#c9782e"></i> Local Holiday</span>
+              <span class="evcal-legend-item"><i style="background:#1c8a5b"></i> Municipal Event</span>
+            </div>
+            <div class="evcal-head">
+              <div class="evcal-month" id="evcalMonthLabel">—</div>
+              <div class="evcal-nav">
+                <button type="button" class="evcal-today-btn" onclick="evcalGoToday()">TODAY</button>
+                <button type="button" class="evcal-arrow-btn" onclick="evcalGoMonth(-1)" aria-label="Previous month"><i class="fa fa-chevron-left"></i></button>
+                <button type="button" class="evcal-arrow-btn" onclick="evcalGoMonth(1)" aria-label="Next month"><i class="fa fa-chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="evcal-dow">
+              <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+            </div>
+            <div class="evcal-grid" id="evcalGrid"><!-- populated live by renderEventsCalendar() in portal.js --></div>
+          </div>
+          <div class="evdetail-card">
+            <div class="evdetail-title">Event Details</div>
+            <div class="evdetail-tabs" role="tablist">
+              <button type="button" class="evdetail-tab active" id="evTabUpcoming" onclick="evcalSetView('upcoming')">Upcoming</button>
+              <button type="button" class="evdetail-tab" id="evTabPast" onclick="evcalSetView('past')">Past Events</button>
+            </div>
+            <div id="evdetailBody"><!-- populated live by renderEventDetailsPanel() in portal.js --></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /news-page -->
+
+  <!-- ════════ EVENT DETAIL PAGE ════════ -->
+  <div id="event-detail-page" class="page">
+    <section style="background:var(--white)">
+      <div class="inner" style="max-width:900px;">
+        <div class="evfull-topbar">
+          <a href="#" class="evfull-back" onclick="showPage('news');return false;"><i class="fa fa-chevron-left"></i> Back</a>
+          <div class="evfull-crumbs"><a href="#" onclick="showPage('home');return false;">Home</a> <i class="fa fa-chevron-right"></i> <a href="#" onclick="showPage('news');return false;">Events</a> <i class="fa fa-chevron-right"></i> <span>Details</span></div>
+        </div>
+        <div id="eventDetailBody"><!-- populated live by openEventDetail() in portal.js --></div>
+      </div>
+    </section>
+  </div><!-- /event-detail-page -->
+
+  <!-- ════════ NEWS ARTICLE PAGE ════════ -->
+  <div id="news-article-page" class="page">
+    <section style="background:var(--white)">
+      <div class="inner" style="max-width:1100px;">
+        <div class="evfull-topbar">
+          <a href="#" class="evfull-back" onclick="showPage('news');return false;"><i class="fa fa-chevron-left"></i> Back</a>
+          <div class="evfull-crumbs"><a href="#" onclick="showPage('home');return false;">Home</a> <i class="fa fa-chevron-right"></i> <a href="#" onclick="showPage('news');return false;">News</a> <i class="fa fa-chevron-right"></i> <span>Article</span></div>
+        </div>
+        <div id="newsArticleBody"><!-- populated live by openNewsArticle() in portal.js --></div>
+      </div>
+    </section>
+  </div><!-- /news-article-page -->
+
+  <!-- ════════ ANNOUNCEMENT DETAIL PAGE ════════ -->
+  <div id="announcement-detail-page" class="page">
+    <section style="background:var(--off)">
+      <div class="inner" style="max-width:1200px;">
+        <div class="evfull-topbar" style="justify-content:flex-start;">
+          <a href="#" class="evfull-back" onclick="showPage('news');return false;"><i class="fa fa-chevron-left"></i> Back</a>
+        </div>
+        <div id="annArticleBody"><!-- populated live by openAnnouncementArticle() in portal.js --></div>
+      </div>
+    </section>
+  </div><!-- /announcement-detail-page -->
+
+
+  <!-- ════════════════════════════ PROJECTS PAGE ════════════════════════════ -->
+  <div id="projects-page" class="page">
+
+    <div class="page-banner" style="background-image: url('/page-bg-cortes-hall.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;">
+      <div class="pg-label">Development</div>
+      <h1>Projects</h1>
+      <p>Major development initiatives and programs undertaken by the Municipality of Cortes.</p>
+    </div>
+
+    <section style="background:var(--off)">
+      <div class="inner">
+
+        <div class="proj-intro-card">
+          <h2>Project &amp; Program Monitoring</h2>
+          <p>Projects and programs of every municipal office — not only infrastructure, but also social services, education, health, agriculture, tourism, environment, governance, and youth programs. Progress percentages are shown only when an official figure has been reported.</p>
+        </div>
+
+        <div class="proj-stats-grid proj-stats-grid--6" id="projectsStats"><!-- populated live by renderProjectsPage() in portal.js --></div>
+
+        <div class="fbar" role="search" aria-label="Filter projects">
+          <div class="fbar-field fbar-field--grow">
+            <label for="projSearch">Search</label>
+            <input type="search" id="projSearch" placeholder="Search projects, locations, funding…" oninput="renderProjectsPage()">
+          </div>
+          <div class="fbar-field">
+            <label for="projOffice">Office</label>
+            <select id="projOffice" onchange="renderProjectsPage()"><option value="">All Offices</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="projCategory">Category</label>
+            <select id="projCategory" onchange="renderProjectsPage()"><option value="">All Categories</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="projYear">Year</label>
+            <select id="projYear" onchange="renderProjectsPage()"><option value="">All Years</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="projStatus">Status</label>
+            <select id="projStatus" onchange="renderProjectsPage()">
+              <option value="">All Statuses</option>
+              <option>Planning</option><option>Proposed</option><option>Ongoing</option><option>Completed</option><option>On Hold</option>
+            </select>
+          </div>
+          <button type="button" class="fbar-reset" onclick="resetFilters(['projSearch','projOffice','projCategory','projYear','projStatus']);renderProjectsPage()"><i class="fa fa-rotate-left"></i> Reset</button>
+        </div>
+        <div class="fbar-count" id="projCount" aria-live="polite"></div>
+
+        <div class="dt-wrap"><table class="dt dt--cards" id="projectsTable">
+          <thead><tr><th>Project / Program</th><th>Implementing Office</th><th>Category</th><th>Status</th><th>Progress</th><th>Year</th><th><span class="sr-only">Details</span></th></tr></thead>
+          <tbody><!-- populated live by renderProjectsPage() in portal.js --></tbody>
+        </table></div>
+
+      </div>
+    </section>
+
+  </div><!-- /projects-page -->
+
+
+  <!-- ════════════════════════════ TOURISM PAGE ════════════════════════════ -->
+  <div id="tourism-page" class="page">
+
+    <div class="page-banner" style="background-image: url('/TOURIST.png'); 
+                               background-size: cover; 
+                               background-position: center; 
+                               background-repeat: no-repeat;">
+      <div class="pg-label">Discover Cortes</div>
+      <h1>Tourism</h1>
+      <p>
+      </p>
+    </div>
+
+    <section class="tourism-section">
+        <div class="inner">
+        <div class="sec-label" style="text-align:center;">Discover Cortes Highlights</div>
+        <div class="sec-title" style="text-align:center;">Experience Cortes' Defining Landmarks</div>
+        <div class="sec-desc" style="text-align:center;max-width:680px;margin:0 auto 2.6rem;">Before heading out to the beaches, take time to explore the historical foundations and vibrant local spots unique to our municipality.</div>
+        <div class="tour-chips" id="tourismChips" role="tablist" aria-label="Tourism categories"></div>
+        <div class="tour-grid" id="tourismSpotsGrid"><!-- populated live by renderTourismSpots() in portal.js --></div>
+        <div class="tour-contact" id="tourismContact"><!-- populated live by renderTourismContact() --></div>
+      </div>
+    </section>
+
+  </div><!-- /tourism-page -->
+
+  <!-- ════════ CONTACTS PAGE ════════ -->
+  <div id="contacts-page" class="page">
+    <div class="page-banner" style="background-image:url('/page-bg-cortes-hall.png'); background-size:cover; background-position:center;">
+      <div class="pg-label">Get in Touch</div>
+      <h1>Contact Us</h1>
+      <p>Reach out to the Municipality of Cortes through our official channels.</p>
+    </div>
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="contacts-card">
+          <div class="sec-label">Official Directory</div>
+          <div class="sec-title">Contact Information</div>
+          <div class="sec-desc" style="margin-bottom:2rem;">Reach out via our verified channels for official inquiries, tourist information, or local department support.</div>
+          <div class="contacts-grid" id="contactsGrid"><!-- populated live by renderContactsPage() in portal.js --></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="contacts-map-card">
+          <div class="contacts-map-head">
+            <div>
+              <div class="sec-title" style="margin-bottom:.3rem;">Find Us on the Map</div>
+              <div class="sec-desc">Cortes Municipal Hall, Cortes, Bohol</div>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=9.7216249819,123.8784078420" target="_blank" rel="noopener" class="contacts-map-link"><i class="fa fa-diamond-turn-right"></i> Open in Google Maps</a>
+          </div>
+          <div class="contacts-map-frame">
+            <iframe src="https://www.google.com/maps?q=9.7216249819,123.8784078420(Municipality+of+Cortes)&z=16&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing the Municipality of Cortes, Bohol"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /contacts-page -->
+
+
+  <!-- ════════ HISTORY PAGE ════════ -->
+  <div id="history-page" class="page">
+    <div class="page-banner" style="background-image: url('/history\ BG.png');">
+      <div class="pg-label">About LGU</div>
+      <h1>Cortes</h1>
+      
+    </div>
+    <section style="background:var(--white)">
+      <div class="inner">
+        <div class="history-layout">
+          <div class="history-main">
+            <div class="history-hero-img">
+              <i class="fa fa-place-of-worship"></i>
+              <div class="history-hero-cap">The Inabanga River basin — the lifeline that shaped where Cortes was
+                founded</div>
+            </div>
+            <div class="sec-label">Our Roots</div>
+            <div class="sec-title">The Story of Cortes</div>
+            <p class="history-para">The Municipality of Cortes is one of the 47 municipalities of the province of Bohol
+              in the Philippines. Nestled along the banks of the Inabanga River, Cortes is named after the Spanish
+              conquistador Hernán Cortés, a naming tradition from the colonial era that reflects the deep Spanish
+              influence on the region.</p>
+            <p class="history-para">Cortes was officially founded in <strong>1862</strong> during the Spanish colonial
+              period. The municipality was carved from surrounding territories and established as a distinct political
+              unit. Over the decades, it evolved from a quiet agricultural settlement into a thriving municipality with
+              growing infrastructure and public services.</p>
+
+            <div class="history-plate">
+              <div class="history-plate-img"
+     style="
+        background-image: url('/history\ BG.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+     "><i class="fa fa-church"></i></div>
+              <div class="history-plate-cap"><strong>Spanish Colonial Roots</strong>Like many Bohol towns, Cortes'
+                earliest church and plaza anchored the poblacion — a layout that still shapes the town center
+                today.</div>
+            </div>
+
+            <p class="history-para">The town played a quiet but significant role during the Philippine-American War and
+              the Japanese occupation in World War II. The resiliency of the Corteseños — as its residents are called —
+              helped the community rebuild and grow stronger through every challenge.</p>
+            <div class="history-plate">
+             <div class="history-plate-img"
+     style="
+        background-image: url('/history\ BG.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+     "><i class="fa fa-hospital"></i></div>
+              <div class="history-plate-cap"><strong>A Growing Municipality</strong>Modern public infrastructure,
+                like the new medical center, marks the latest chapter in the town's steady development.</div>
+            </div>
+
+            <p class="history-para">Today, Cortes is rated as a <strong>High Functional LGU</strong> and continues to
+              grow as a progressive municipality, with landmark developments such as the Governor Celestino Gallares
+              Multi-Specialty Medical Center, which held its soft launch in September 2025 within the municipality.</p>
+            <div class="history-quote">
+              <blockquote>"A community rooted in faith, culture, and resilience — the spirit of Cortes endures."
+              </blockquote>
+            </div>
+          </div>
+          <div class="history-sidebar">
+            <div class="history-fact-box">
+              <h3>Quick Facts</h3>
+              <ul class="fact-list">
+                <li><span class="fact-label">Founded</span><span class="fact-val">1862</span></li>
+                <li><span class="fact-label">Province</span><span class="fact-val">Bohol</span></li>
+                <li><span class="fact-label">Region</span><span class="fact-val">Region VII</span></li>
+                <li><span class="fact-label">Land Area</span><span class="fact-val">27.3 km²</span></li>
+                <li><span class="fact-label">Barangays</span><span class="fact-val">14</span></li>
+                <li><span class="fact-label">Population</span><span class="fact-val">18,976 (2024 Census)</span></li>
+                <li><span class="fact-label">Classification</span><span class="fact-val">5th Class Municipality</span>
+                </li>
+                <li><span class="fact-label">LGU Rating</span><span class="fact-val">High Functional</span></li>
+              </ul>
+            </div>
+            <div class="history-fact-box" style="margin-top:1.5rem">
+              <h3>Barangays</h3>
+              <ul class="barangay-list">
+                <li>De la Paz</li>
+                <li>Fatima</li>
+                <li>Loreto</li>
+                <li>Lourdes</li>
+                <li>Malayo Norte</li>
+                <li>Malayo Sur</li>
+                <li>Monserrat</li>
+                <li>New Lourdes</li>
+                <li>Patrocinio</li>
+                <li>Poblacion</li>
+                <li>Rosario</li>
+                <li>Salvador</li>
+                <li>San Roque</li>
+                <li>Upper de la Paz</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:3rem">
+          <div class="sec-label">Timeline</div>
+          <div class="sec-title">Key Milestones</div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-year">1862</div>
+              <div class="tl-dot"><i class="fa fa-landmark"></i></div>
+              <div class="tl-body"><strong>Municipal Foundation</strong>
+                <p>Cortes is officially established as a municipality during the Spanish colonial period.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1900s</div>
+              <div class="tl-dot"><i class="fa fa-book"></i></div>
+              <div class="tl-body"><strong>American Colonial Era</strong>
+                <p>Local governance restructured under American administration; public schools established.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1942–45</div>
+              <div class="tl-dot"><i class="fa fa-shield-halved"></i></div>
+              <div class="tl-body"><strong>World War II</strong>
+                <p>Municipality endures Japanese occupation; residents demonstrate courage and resilience.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">1946</div>
+              <div class="tl-dot"><i class="fa fa-flag"></i></div>
+              <div class="tl-body"><strong>Philippine Independence</strong>
+                <p>Cortes becomes part of the independent Republic of the Philippines under Bohol province.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2013</div>
+              <div class="tl-dot"><i class="fa fa-triangle-exclamation"></i></div>
+              <div class="tl-body"><strong>Bohol Earthquake</strong>
+                <p>A 7.2 magnitude earthquake struck Bohol; Cortes joined recovery and rebuilding efforts.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2025</div>
+              <div class="tl-dot"><i class="fa fa-hospital"></i></div>
+              <div class="tl-body"><strong>Medical Center Soft Launch</strong>
+                <p>Gov. Celestino Gallares Multi-Specialty Medical Center opens its doors in Cortes, Sept 15, 2025.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ MUNICIPAL OFFICIALS PAGE ════════ -->
+  <!-- ════════ DEPARTMENTS PAGE ════════ -->
+  <style>
+    /* ---- Departments & Offices — visual upgrade (scoped to #departments-page) ---- */
+    #departments-page .doff-banner-wrap{ position:relative; overflow:hidden; }
+    #departments-page .doff-banner-pattern{
+      position:absolute; inset:0; opacity:.10; pointer-events:none;
+      background-image:
+        radial-gradient(circle at 12% 30%, #fff 0, transparent 3px),
+        radial-gradient(circle at 32% 70%, #fff 0, transparent 3px),
+        radial-gradient(circle at 52% 20%, #fff 0, transparent 3px),
+        radial-gradient(circle at 72% 60%, #fff 0, transparent 3px),
+        radial-gradient(circle at 88% 35%, #fff 0, transparent 3px),
+        radial-gradient(circle at 22% 85%, #fff 0, transparent 3px),
+        radial-gradient(circle at 62% 90%, #fff 0, transparent 3px);
+      background-size: 340px 220px;
+    }
+
+    /* ── Simple logo + name grid (replaces the old filterable card layout) ── */
+    .dept-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2.8rem;
+      margin-top: 2rem;
+    }
+    .dept-logo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.2rem;
+      transition: transform .2s ease;
+    }
+    .dept-logo-card:hover { transform: translateY(-4px); }
+    .dept-logo-img {
+      width: 230px; height: 230px; border-radius: 50%;
+      background: var(--off, #f4f6f9);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--gold, #c9a84c);
+    }
+    .dept-logo-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .dept-logo-img i { font-size: 4.6rem; color: #aab4c4; }
+    .dept-logo-name { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 1.15rem; color: var(--navy, #0b1f3a); line-height: 1.4; }
+    .dept-logo-contact { font-size: .85rem; color: #5a6472; display: flex; align-items: center; gap: .4rem; }
+    .dept-logo-contact i { color: var(--gold, #c9a84c); font-size: .78rem; }
+    .dept-logo-fb {
+      font-size: .85rem; font-weight: 700; color: var(--navy, #0b1f3a);
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .dept-logo-fb i { color: #1877f2; font-size: .95rem; }
+    .dept-logo-fb:hover { text-decoration: underline; }
+  </style>
+
+  <div id="departments-page" class="page">
+    <div class="page-banner doff-banner-wrap" style="background:linear-gradient(135deg,#0b1f3a,#1a3a6b)">
+      <div class="doff-banner-pattern"></div>
+      <div class="pg-label">About LGU</div>
+      <h1>Departments &amp; Offices</h1>
+      <p>The municipal departments and offices delivering essential services to every Corteseño.</p>
+    </div>
+    <section style="background:var(--off)">
+      <div class="inner">
+        <div class="sec-label">Organization</div>
+        <div class="sec-title">Municipal Offices</div>
+        <div class="sec-desc">Each office is dedicated to a specific area of public service.</div>
+
+        <div class="dept-logo-grid" id="departmentsGrid"><!-- populated live by renderDepartmentsPage() in portal.js --></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ MISSION & VISION PAGE ════════ -->
+  <style>
+    /* ---- Mission & Vision — visual upgrade (scoped to #missionvision-page) ---- */
+    #missionvision-page .mv2-banner{ position:relative; overflow:hidden; }
+    #missionvision-page .mv2-banner-pattern{
+      position:absolute; inset:0; opacity:.10; pointer-events:none;
+      background-image:
+        radial-gradient(circle at 15% 25%, #fff 0, transparent 3px),
+        radial-gradient(circle at 40% 75%, #fff 0, transparent 3px),
+        radial-gradient(circle at 60% 15%, #fff 0, transparent 3px),
+        radial-gradient(circle at 80% 60%, #fff 0, transparent 3px),
+        radial-gradient(circle at 25% 90%, #fff 0, transparent 3px);
+      background-size: 320px 220px;
+    }
+
+    .mv2-panel{
+      position:relative; border-radius:20px; overflow:hidden;
+      box-shadow:0 24px 60px rgba(11,31,58,.22); margin-bottom:3.2rem;
+    }
+    .mv2-panel-art{ position:absolute; inset:0; width:100%; height:100%; }
+    .mv2-panel-art svg{ width:100%; height:100%; display:block; }
+    .mv2-panel-tint{
+      position:absolute; inset:0;
+      background:linear-gradient(135deg, rgba(8,60,32,.86), rgba(6,40,22,.90));
+    }
+    .mv2-grid{
+      position:relative; z-index:1;
+      display:grid; grid-template-columns:repeat(2,1fr); gap:2.2rem;
+      padding:4rem 3.2rem;
+    }
+    .mv2-card{
+      background:linear-gradient(160deg,#1fae63,#0d7a41);
+      border-radius:18px; padding:2.6rem 2rem 2.4rem;
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+      box-shadow:0 18px 34px rgba(0,0,0,.28);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .mv2-card:hover{ transform:translateY(-6px); box-shadow:0 26px 44px rgba(0,0,0,.32); }
+    .mv2-card-badge{
+      width:96px; height:96px; border-radius:50%; background:#fff;
+      display:flex; align-items:center; justify-content:center; margin-bottom:1.6rem;
+      box-shadow:0 10px 22px rgba(0,0,0,.22), inset 0 0 0 6px rgba(31,174,99,.12);
+    }
+    .mv2-card-badge i{ font-size:2.1rem; color:#0d7a41; }
+    .mv2-card p{
+      color:rgba(255,255,255,.94); font-size:.95rem; line-height:1.75; margin:0 0 2rem; min-height:140px;
+    }
+    .mv2-card-label{
+      font-family:'Source Serif 4',serif; font-weight:800; font-size:2rem;
+      color:#fff; letter-spacing:.03em; margin-top:auto;
+    }
+    
+    
+
+    .mv2-values-grid{
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:1.4rem;
+    }
+    .mv2-value-card{
+      background:#fff; border-radius:14px; padding:1.6rem 1.4rem; text-align:center;
+      border:1px solid #eceff4; box-shadow:0 1px 3px rgba(11,31,58,.06);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .mv2-value-card:hover{ transform:translateY(-4px); box-shadow:0 14px 26px rgba(11,31,58,.12); }
+    .mv2-value-ring{
+      width:64px; height:64px; border-radius:50%; margin:0 auto .9rem;
+      display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:#fff;
+    }
+    .mv2-value-card h3{ font-size:1rem; color:var(--navy,#0b1f3a); margin:0 0 .4rem; font-family:'Source Serif 4',serif; }
+    .mv2-value-card p{ font-size:.8rem; color:#727c8a; line-height:1.55; margin:0; }
+
+    .mv2-pledge{
+      position:relative; margin-top:3.2rem; border-radius:18px; overflow:hidden;
+      background:linear-gradient(135deg,#0b1f3a,#132c52); color:#fff;
+      padding:2.8rem 2.6rem; text-align:center;
+    }
+    .mv2-pledge::before{
+      content:""; position:absolute; inset:0; opacity:.08; pointer-events:none;
+      background-image: repeating-linear-gradient(45deg, #fff 0 2px, transparent 2px 26px);
+    }
+    .mv2-pledge-seal{
+      position:relative; z-index:1; width:64px; height:64px; margin:0 auto 1rem; border-radius:50%;
+      border:2px solid var(--gold-lt,#e8c874); display:flex; align-items:center; justify-content:center;
+      font-size:1.5rem; color:var(--gold-lt,#e8c874);
+    }
+    .mv2-pledge h2{
+      position:relative; z-index:1; font-family:'Source Serif 4',serif; font-size:1.5rem;
+      color:#fff; margin:0 0 1rem;
+    }
+    .mv2-pledge p{
+      position:relative; z-index:1; max-width:680px; margin:0 auto; font-size:.95rem;
+      line-height:1.85; color:rgba(255,255,255,.86); font-style:italic;
+    }
+
+  </style>
+
+  <div id="missionvision-page" class="page">
+    <div class="page-banner mv2-banner" style="background:linear-gradient(135deg,#0b1f3a,#1a3a6b)">
+      <div class="mv2-banner-pattern"></div>
+      <div class="pg-label">About LGU</div>
+      <h1>Mission &amp; Vision</h1>
+      <p>The guiding principles and aspirations of the Municipality of Cortes.</p>
+    </div>
+    <section style="background:var(--white)">
+      <div class="inner">
+
+        <div class="mv2-panel">
+          <div class="mv2-panel-art">
+            <svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of Cortes' rolling hills, the Inabanga River, and a rising sun">
+              <defs>
+                <linearGradient id="mvSky2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0b1f3a"/>
+                  <stop offset="45%" stop-color="#3a5f4a"/>
+                  <stop offset="100%" stop-color="#6fae7d"/>
+                </linearGradient>
+                <linearGradient id="mvHillBack2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1c3d2c"/>
+                  <stop offset="100%" stop-color="#0f2a1e"/>
+                </linearGradient>
+                <linearGradient id="mvHillFront2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#245c3a"/>
+                  <stop offset="100%" stop-color="#123a26"/>
+                </linearGradient>
+              </defs>
+              <rect width="1200" height="640" fill="url(#mvSky2)"/>
+              <circle cx="600" cy="260" r="110" fill="#fff3d0" opacity=".35"/>
+              <path d="M0 380 Q180 300 380 356 T760 336 T1200 370 V640 H0 Z" fill="url(#mvHillBack2)" opacity=".9"/>
+              <path d="M0 470 Q200 400 440 460 T880 452 T1200 468 V640 H0 Z" fill="url(#mvHillFront2)"/>
+              <g fill="#0d2a1c">
+                <g transform="translate(180,440)">
+                  <rect x="-4" y="0" width="8" height="60" rx="3"/>
+                  <path d="M0 0 C -34 -14 -52 -38 -58 -52 C -30 -44 -10 -24 0 0 Z"/>
+                  <path d="M0 0 C 34 -14 52 -38 58 -52 C 30 -44 10 -24 0 0 Z"/>
+                  <path d="M0 0 C -10 -30 -6 -52 0 -66 C 6 -52 10 -30 0 0 Z"/>
+                </g>
+                <g transform="translate(1000,430) scale(1.1)">
+                  <rect x="-4" y="0" width="8" height="60" rx="3"/>
+                  <path d="M0 0 C -34 -14 -52 -38 -58 -52 C -30 -44 -10 -24 0 0 Z"/>
+                  <path d="M0 0 C 34 -14 52 -38 58 -52 C 30 -44 10 -24 0 0 Z"/>
+                  <path d="M0 0 C -10 -30 -6 -52 0 -66 C 6 -52 10 -30 0 0 Z"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="mv2-panel-tint"></div>
+
+          <div class="mv2-grid">
+            <div class="mv2-card mv2-vision">
+              <div class="mv2-card-badge"><i class="fa fa-eye"></i></div>
+              <p>A progressive, peaceful, and prosperous Municipality of Cortes — with empowered Corteseños living in a healthy, safe, and sustainable environment, guided by transparent and accountable local governance.</p>
+              <div class="mv2-card-label">VISION</div>
+            </div>
+            <div class="mv2-card mv2-mission">
+              <div class="mv2-card-badge"><i class="fa fa-rocket"></i></div>
+              <p>To deliver efficient, equitable, and people-centered public services; to foster inclusive economic growth; to uphold the rule of law; and to protect and preserve the natural and cultural heritage of Cortes.</p>
+              <div class="mv2-card-label">MISSION</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-label">Core Values</div>
+          <div class="sec-title">What We Stand For</div>
+          <div class="mv2-values-grid">
+            <div class="mv2-value-card">
+              <div class="mv2-value-ring" style="background:linear-gradient(135deg,#0b1f3a,#1a3a6b)"><i class="fa fa-handshake"></i></div>
+              <h3>Integrity</h3>
+              <p>We uphold honesty and transparency in all our actions as public servants.</p>
+            </div>
+            <div class="mv2-value-card">
+              <div class="mv2-value-ring" style="background:linear-gradient(135deg,#7b0d0d,#c0392b)"><i class="fa fa-balance-scale"></i></div>
+              <h3>Accountability</h3>
+              <p>We are answerable to the people of Cortes for every decision and resource entrusted to us.</p>
+            </div>
+            <div class="mv2-value-card">
+              <div class="mv2-value-ring" style="background:linear-gradient(135deg,#0d6e6e,#1aa39a)"><i class="fa fa-users"></i></div>
+              <h3>Service</h3>
+              <p>We place the welfare of every Corteseño at the center of everything we do.</p>
+            </div>
+            <div class="mv2-value-card">
+              <div class="mv2-value-ring" style="background:linear-gradient(135deg,#175c2e,#3f9450)"><i class="fa fa-leaf"></i></div>
+              <h3>Sustainability</h3>
+              <p>We protect the environment and plan for the long-term well-being of our community.</p>
+            </div>
+            <div class="mv2-value-card">
+              <div class="mv2-value-ring" style="background:linear-gradient(135deg,#8a6b12,#c99a2e)"><i class="fa fa-lightbulb"></i></div>
+              <h3>Innovation</h3>
+              <p>We embrace new ideas and technologies to improve governance and public service delivery.</p>
+            </div>
+            <div class="mv2-value-card">
+              <div class="mv2-value-ring" style="background:linear-gradient(135deg,#4a1454,#8a2b98)"><i class="fa fa-heart"></i></div>
+              <h3>Compassion</h3>
+              <p>We care deeply for the most vulnerable members of our community and strive to uplift them.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mv2-pledge">
+          <div class="mv2-pledge-seal"><i class="fa fa-shield-halved"></i></div>
+          <div class="sec-label" style="color:var(--gold-lt,#e8c874);position:relative;z-index:1">Our Commitment</div>
+          <h2>The Cortes LGU Pledge</h2>
+          <p>"We, the officials and employees of the Municipality of Cortes, commit ourselves to the service of our
+            people with utmost dedication, professionalism, and integrity. We pledge to uphold the Constitution, obey
+            the laws of the land, and faithfully discharge our duties and responsibilities as public servants."</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ BARANGAYS CONTENT STYLES (now embedded on the About LGU page, after Mission & Vision) ════════ -->
+  <style>
+    .brgy-stats-strip{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+    .brgy-stat-box{
+      background:#fff; border:1px solid #e3e7ee; border-radius:12px;
+      padding:1rem 1.2rem; text-align:center;
+      box-shadow:0 1px 3px rgba(11,31,58,.06);
+    }
+    .brgy-stat-box .num{ font-family:'Source Serif 4',serif; font-size:1.7rem; font-weight:700; color:var(--navy,#0b1f3a); display:block; }
+    .brgy-stat-box .lbl{ font-size:.76rem; color:#7a8494; text-transform:uppercase; letter-spacing:.03em; font-weight:600; }
+    
+
+    .brgy-search-wrap{ margin-bottom:1.8rem; position:relative; max-width:420px; }
+    .brgy-search-wrap input{
+      width:100%; padding:.75rem 1rem .75rem 2.6rem; border:1px solid #dfe4ec; border-radius:999px;
+      font-family:inherit; font-size:.9rem; color:var(--text,#1a2840); outline:none; transition:.2s;
+    }
+    .brgy-search-wrap input:focus{ border-color:var(--gold,#c9a84c); box-shadow:0 0 0 3px rgba(201,168,76,.15); }
+    .brgy-search-wrap i{ position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:#9aa5b5; }
+
+    .brgy-grid{ display:flex; flex-direction:column; gap:1rem; }
+
+    .brgy-card{
+      background:#fff; border:1px solid #eceff4; border-radius:14px; overflow:hidden;
+      box-shadow:0 1px 3px rgba(11,31,58,.06);
+      transition:box-shadow .2s ease;
+    }
+    .brgy-card:hover{ box-shadow:0 6px 18px rgba(11,31,58,.09); }
+
+    .brgy-card-head{
+      width:100%; display:flex; align-items:center; gap:1.3rem;
+      background:#fff; border:none; padding:1.5rem 1.8rem; text-align:left; cursor:pointer;
+      font-family:inherit;
+    }
+    .brgy-head-icon{
+      flex:0 0 auto; width:72px; height:72px; border-radius:50%;
+      background:linear-gradient(135deg,var(--navy,#0b1f3a),var(--navy-mid,#102b52));
+      color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.7rem;
+      overflow:hidden;
+    }
+    .brgy-head-icon img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .brgy-head-info{ flex:1 1 auto; min-width:0; }
+    .brgy-head-name{ font-family:'Source Serif 4',serif; font-size:1.35rem; font-weight:700; color:var(--navy,#0b1f3a); }
+    .brgy-head-sub{ font-size:.92rem; color:#6a7385; margin-top:.25rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .brgy-head-pop{
+      flex:0 0 auto; font-size:.85rem; font-weight:700; color:var(--navy,#0b1f3a);
+      background:var(--off2,#eaf0f8); padding:.45rem .9rem; border-radius:999px;
+      display:flex; align-items:center; gap:.4rem; white-space:nowrap;
+    }
+    .brgy-head-chevron{ flex:0 0 auto; color:#9aa5b5; transition:transform .25s ease; }
+    .brgy-card.open .brgy-head-chevron{ transform:rotate(180deg); }
+
+    .brgy-card-body{
+      max-height:0; overflow:hidden; transition:max-height .35s ease;
+      border-top:1px solid transparent;
+    }
+    .brgy-card.open .brgy-card-body{ border-top:1px solid #eceff4; }
+
+    .brgy-verified{
+      display:inline-flex; align-items:center; gap:.4rem; margin:1.1rem 1.3rem .2rem;
+      font-size:.72rem; font-weight:800; letter-spacing:.03em; text-transform:uppercase;
+      color:#1d7a4c; background:#e8f7ee; padding:.3rem .7rem; border-radius:999px;
+    }
+    .brgy-off-grid{ padding: .6rem 1.3rem 0; display:flex; flex-direction:column; }
+    .brgy-off-row{
+      display:flex; flex-wrap:wrap; gap:.3rem 1rem; padding:.55rem 0; border-bottom:1px dashed #e6e9ef;
+      font-size:.86rem;
+    }
+    .brgy-off-row:last-child{ border-bottom:none; }
+    .brgy-off-label{ flex:0 0 220px; color:#7a8494; font-weight:600; }
+    .brgy-off-label i{ color:var(--gold,#c9a84c); margin-right:.3rem; }
+    .brgy-off-val{ flex:1 1 200px; color:var(--text,#1a2840); font-weight:600; }
+    .brgy-term{ color:#8a93a3; font-weight:500; font-size:.8rem; }
+
+    .brgy-kagawad-title{
+      margin:1.1rem 1.3rem .5rem; font-size:.82rem; font-weight:700; color:var(--navy,#0b1f3a);
+      text-transform:uppercase; letter-spacing:.02em;
+    }
+    .brgy-kagawad-title i{ color:var(--gold,#c9a84c); margin-right:.3rem; }
+    .brgy-kagawad-list{
+      list-style:none; margin:0 1.3rem 1rem; padding:0;
+      display:grid; grid-template-columns:repeat(2,1fr); gap:.4rem .8rem;
+    }
+    .brgy-kagawad-list li{
+      font-size:.82rem; color:var(--text,#1a2840); background:var(--off,#f4f6f9);
+      padding:.5rem .8rem; border-radius:8px; border-left:3px solid var(--gold,#c9a84c);
+    }
+    
+
+    .brgy-note{
+      margin:0 1.3rem 1.2rem; padding:.7rem .9rem; background:#fdf6ea; border:1px solid #f0e0b8;
+      border-radius:8px; font-size:.76rem; color:#8a6b12; line-height:1.5;
+    }
+    .brgy-note i{ margin-right:.3rem; }
+
+    .brgy-source-line{
+      margin-top:2rem; font-size:.78rem; color:#8a93a3; text-align:center;
+    }
+  </style>
+
+
+  <script>
+    function toggleBrgy(btn){
+      var card = btn.closest('.brgy-card');
+      var body = card.querySelector('.brgy-card-body');
+      var isOpen = card.classList.contains('open');
+      if(isOpen){
+        card.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        card.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    }
+    function filterBrgy(q){
+      q = q.trim().toLowerCase();
+      document.querySelectorAll('#brgyGrid .brgy-card').forEach(function(card){
+        var name = card.getAttribute('data-name');
+        card.style.display = (!q || name.indexOf(q) !== -1) ? '' : 'none';
+      });
+    }
+  </script>
+
+  <!-- ════════ SERVICES DIRECTORY PAGE ════════ -->
+  <style>
+    /* ---- Services Directory — visual upgrade (scoped to #services-page) ---- */
+    #services-page .svd-banner{ position:relative; overflow:hidden; }
+    #services-page .svd-banner-pattern{
+      position:absolute; inset:0; opacity:.10; pointer-events:none;
+      background-image:
+        radial-gradient(circle at 10% 30%, #fff 0, transparent 3px),
+        radial-gradient(circle at 34% 75%, #fff 0, transparent 3px),
+        radial-gradient(circle at 58% 20%, #fff 0, transparent 3px),
+        radial-gradient(circle at 78% 60%, #fff 0, transparent 3px),
+        radial-gradient(circle at 92% 30%, #fff 0, transparent 3px);
+      background-size: 320px 220px;
+    }
+
+    .svd-search-bar{
+      position:relative; max-width:560px; margin:1.6rem 0 1.4rem;
+    }
+    .svd-search-bar input{
+      width:100%; padding:.85rem 1.2rem .85rem 2.8rem; border-radius:999px;
+      border:1px solid #dde2ea; font-size:.92rem; font-family:'Inter',sans-serif;
+      box-shadow:0 1px 3px rgba(11,31,58,.05); outline:none; transition:border-color .15s ease, box-shadow .15s ease;
+    }
+    .svd-search-bar input:focus{ border-color:var(--navy,#0b1f3a); box-shadow:0 0 0 3px rgba(11,31,58,.08); }
+    .svd-search-bar i{
+      position:absolute; left:1.05rem; top:50%; transform:translateY(-50%); color:#9aa4b2; font-size:.9rem;
+    }
+    .svd-search-hint{ font-size:.76rem; color:#8a94a3; margin-bottom:1.6rem; }
+
+    .svd-jumpnav{
+      display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:2.4rem;
+    }
+    .svd-jump-btn{
+      display:flex; align-items:center; gap:.45rem;
+      border:1px solid #dfe4ec; background:#fff; color:#3c4a5e;
+      padding:.5rem 1rem; border-radius:999px; font-size:.8rem; font-weight:600;
+      cursor:pointer; text-decoration:none; transition:.18s ease;
+    }
+    .svd-jump-btn:hover{ border-color:#b9c3d3; background:#f5f7fa; transform:translateY(-1px); }
+    .svd-jump-btn i{ font-size:.75rem; }
+
+    .svd-category{ margin-bottom:2.6rem; scroll-margin-top:110px; }
+    .svd-cat-band{
+      display:flex; align-items:center; gap:.9rem;
+      border-radius:12px; padding:1rem 1.3rem; margin-bottom:1.2rem; color:#fff;
+      box-shadow:0 6px 16px rgba(11,31,58,.12);
+    }
+    .svd-cat-band-icon{
+      width:42px; height:42px; border-radius:10px; background:rgba(255,255,255,.18);
+      display:flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0;
+    }
+    .svd-cat-band h2{ font-family:'Source Serif 4',serif; font-size:1.15rem; margin:0; }
+    .svd-cat-band .svd-cat-count{
+      margin-left:auto; font-size:.72rem; background:rgba(255,255,255,.2); padding:.3rem .7rem;
+      border-radius:999px; font-weight:700; white-space:nowrap;
+    }
+
+    .svd-cat-band.cat-biz{ background:linear-gradient(135deg,#4a1454,#8a2b98); }
+    .svd-cat-band.cat-records{ background:linear-gradient(135deg,#123a63,#2f6fa8); }
+    .svd-cat-band.cat-fin{ background:linear-gradient(135deg,#8a6b12,#c99a2e); }
+    .svd-cat-band.cat-social{ background:linear-gradient(135deg,#0d6e6e,#1aa39a); }
+    .svd-cat-band.cat-health{ background:linear-gradient(135deg,#7b1030,#c22a4f); }
+    .svd-cat-band.cat-exec{ background:linear-gradient(135deg,#0b1f3a,#1a3a6b); }
+    .svd-cat-band.cat-leg{ background:linear-gradient(135deg,#2b1e57,#4c3a92); }
+    .svd-cat-band.cat-agri{ background:linear-gradient(135deg,#175c2e,#3f9450); }
+    .svd-cat-band.cat-drrm{ background:linear-gradient(135deg,#8a3a08,#d9711f); }
+
+    .svd-cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:1.2rem; }
+    .svd-card{
+      background:#fff; border-radius:12px; padding:1.3rem 1.4rem 1.2rem;
+      border:1px solid #eceff4; border-left:4px solid var(--navy,#0b1f3a);
+      box-shadow:0 1px 3px rgba(11,31,58,.06);
+      transition:transform .18s ease, box-shadow .18s ease;
+      display:flex; flex-direction:column; gap:.65rem;
+    }
+    .svd-card:hover{ transform:translateY(-3px); box-shadow:0 12px 22px rgba(11,31,58,.1); }
+    .svd-card.cat-biz{ border-left-color:#8a2b98; }
+    .svd-card.cat-records{ border-left-color:#2f6fa8; }
+    .svd-card.cat-fin{ border-left-color:#c99a2e; }
+    .svd-card.cat-social{ border-left-color:#1aa39a; }
+    .svd-card.cat-health{ border-left-color:#c22a4f; }
+    .svd-card.cat-exec{ border-left-color:#1a3a6b; }
+    .svd-card.cat-leg{ border-left-color:#4c3a92; }
+    .svd-card.cat-agri{ border-left-color:#3f9450; }
+    .svd-card.cat-drrm{ border-left-color:#d9711f; }
+
+    .svd-card h4{ font-family:'Source Serif 4',serif; font-size:1rem; color:var(--navy,#0b1f3a); margin:0; line-height:1.35; }
+    .svd-card .svd-office{
+      display:flex; align-items:center; gap:.4rem; font-size:.76rem; color:#7a8494; font-weight:600;
+    }
+    .svd-card .svd-office i{ color:#a9b2c0; font-size:.72rem; }
+
+    .svd-reqs-label{ font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:#8a94a3; margin-top:.2rem; }
+    .svd-reqs-list{ list-style:none; margin:.3rem 0 0; padding:0; display:flex; flex-direction:column; gap:.28rem; }
+    .svd-reqs-list li{ font-size:.8rem; color:#5a6472; display:flex; gap:.45rem; line-height:1.4; }
+    .svd-reqs-list li::before{ content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#b8c0cc; font-size:.65rem; margin-top:.28rem; }
+
+    .svd-footer-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:auto; padding-top:.7rem; border-top:1px dashed #e6e9ef; }
+    .svd-pill{ font-size:.72rem; font-weight:700; padding:.28rem .65rem; border-radius:999px; display:flex; align-items:center; gap:.35rem; }
+    .svd-pill.svd-fee{ background:#eef4ff; color:#2f5fa8; }
+    .svd-pill.svd-free{ background:#e8f7ee; color:#1d8a4a; }
+    .svd-pill.svd-time{ background:#fff4e5; color:#a1650e; }
+
+    .svd-noresults{ display:none; text-align:center; padding:3rem 1rem; color:#8a94a3; }
+    .svd-noresults i{ font-size:2rem; margin-bottom:.8rem; color:#c7cedb; display:block; }
+
+    
+  </style>
+
+  <div id="services-page" class="page">
+    <div class="page-banner svd-banner" style="background:linear-gradient(135deg,#7b0d0d,#c0392b)">
+      <div class="svd-banner-pattern"></div>
+      <div class="pg-label">Services</div>
+      <h1>Services Directory</h1>
+      <p>A complete guide to all municipal services available to the residents of Cortes, based on the official Citizen's Charter posted at the Municipal Hall.</p>
+    </div>
+    <section style="background:var(--off)">
+      <div class="inner">
+        <div class="sec-label">Municipal Services</div>
+        <div class="sec-title">How Can We Help You?</div>
+        <div class="sec-desc">Search or filter the services below. Select <strong>View Process</strong> to see the complete requirements, step-by-step procedure, processing time, fees, and the responsible office.</div>
+
+        <div class="fbar" role="search" aria-label="Filter services">
+          <div class="fbar-field fbar-field--grow">
+            <label for="svcSearch">Search</label>
+            <input type="search" id="svcSearch" placeholder="e.g. business permit, building permit, tax declaration…" oninput="renderServicesDirectory()">
+          </div>
+          <div class="fbar-field">
+            <label for="svcOffice">Office</label>
+            <select id="svcOffice" onchange="renderServicesDirectory()"><option value="">All Offices</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="svcCategory">Category</label>
+            <select id="svcCategory" onchange="renderServicesDirectory()"><option value="">All Categories</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="svcFee">Fee</label>
+            <select id="svcFee" onchange="renderServicesDirectory()">
+              <option value="">Any Fee</option>
+              <option value="free">Free of charge</option>
+              <option value="paid">With fee</option>
+              <option value="unset">Not yet specified</option>
+            </select>
+          </div>
+          <div class="fbar-field">
+            <label for="svcTime">Processing Time</label>
+            <select id="svcTime" onchange="renderServicesDirectory()">
+              <option value="">Any Duration</option>
+              <option value="short">Within 30 minutes</option>
+              <option value="day">Within the day</option>
+              <option value="long">More than a day</option>
+              <option value="varies">Varies / not specified</option>
+            </select>
+          </div>
+          <button type="button" class="fbar-reset" onclick="resetFilters(['svcSearch','svcOffice','svcCategory','svcFee','svcTime']);renderServicesDirectory()"><i class="fa fa-rotate-left"></i> Reset</button>
+        </div>
+        <div class="fbar-count" id="svcCount" aria-live="polite"></div>
+
+        <div class="dt-wrap"><table class="dt dt--cards" id="svcTable">
+          <thead><tr><th>Service</th><th>Office</th><th>Requirements</th><th>Processing Time</th><th>Fee</th><th>Responsible</th><th><span class="sr-only">Details</span></th></tr></thead>
+          <tbody><!-- populated live by renderServicesDirectory() in portal.js --></tbody>
+        </table></div>
+
+        <div class="svc-footnote"><i class="fa fa-circle-info"></i> The same service records power the <a href="#charter" onclick="showPage('charter');return false;">Citizen's Charter</a> and each office's page, so every update is made in one place.</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ CITIZEN'S CHARTER PAGE (same service data, grouped by office) ════════ -->
+  <div id="charter-page" class="page">
+    <div class="page-banner svd-banner" style="background:linear-gradient(135deg,#0b1f3a,#1a3a6b)">
+      <div class="pg-label">Services</div>
+      <h1>Citizen's Charter</h1>
+      <p>Every frontline service of the Municipality of Cortes — who may avail, requirements, procedure, processing time, fees, and the person responsible — grouped by office.</p>
+    </div>
+    <section style="background:var(--off)">
+      <div class="inner">
+        <div class="fbar" role="search" aria-label="Filter the Citizen's Charter">
+          <div class="fbar-field fbar-field--grow">
+            <label for="charterSearch">Search</label>
+            <input type="search" id="charterSearch" placeholder="Search a service or office…" oninput="renderCharterPage()">
+          </div>
+          <div class="fbar-field">
+            <label for="charterOffice">Office</label>
+            <select id="charterOffice" onchange="renderCharterPage()"><option value="">All Offices</option></select>
+          </div>
+          <button type="button" class="fbar-reset" onclick="window.print()"><i class="fa fa-print"></i> Print</button>
+        </div>
+        <div id="charterBody"><!-- populated live by renderCharterPage() in portal.js --></div>
+        <div class="charter-feedback" id="charterFeedback"><!-- populated live by renderCharterPage() --></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ DOWNLOADS & FORMS PAGE ════════ -->
+  <div id="downloads-page" class="page">
+    <div class="page-banner svd-banner" style="background:linear-gradient(135deg,#123a63,#2f6fa8)">
+      <div class="pg-label">Services</div>
+      <h1>Downloads &amp; Forms</h1>
+      <p>Official forms and documents from the offices of the Municipality of Cortes.</p>
+    </div>
+    <section style="background:var(--off)">
+      <div class="inner">
+        <div class="fbar" role="search" aria-label="Filter documents">
+          <div class="fbar-field fbar-field--grow">
+            <label for="dlSearch">Search</label>
+            <input type="search" id="dlSearch" placeholder="Search forms and documents…" oninput="renderDownloadsPage()">
+          </div>
+          <div class="fbar-field">
+            <label for="dlOffice">Office</label>
+            <select id="dlOffice" onchange="renderDownloadsPage()"><option value="">All Offices</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="dlCategory">Category</label>
+            <select id="dlCategory" onchange="renderDownloadsPage()"><option value="">All Categories</option></select>
+          </div>
+        </div>
+        <div class="fbar-count" id="dlCount" aria-live="polite"></div>
+        <div class="dt-wrap"><table class="dt dt--cards" id="dlTable">
+          <thead><tr><th>Document</th><th>Office</th><th>Category</th><th>Date</th><th><span class="sr-only">Download</span></th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ SEARCH RESULTS PAGE ════════ -->
+  <div id="search-page" class="page">
+    <section style="background:var(--off);min-height:60vh;">
+      <div class="inner" style="max-width:1100px;">
+        <div class="sec-label">Search</div>
+        <div class="sec-title" id="searchTitle">Search the Website</div>
+        <form class="search-page-form" role="search" onsubmit="runSiteSearch(document.getElementById('searchPageInput').value);return false;">
+          <label for="searchPageInput" class="sr-only">Search</label>
+          <input type="search" id="searchPageInput" placeholder="Search offices, services, projects, news, documents…">
+          <button type="submit"><i class="fa fa-search"></i> Search</button>
+        </form>
+        <div id="searchResults"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ LOCAL YOUTH DEVELOPMENT PLAN PAGE ════════ -->
+  <style>
+    #youthplan-page .ypv-toolbar{
+      display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.8rem;
+      margin-bottom:1.1rem;
+    }
+    #youthplan-page .ypv-toolbar h2{
+      font-family:'Source Serif 4',serif; font-size:1.15rem; color:var(--navy); margin:0 0 .2rem;
+    }
+    #youthplan-page .ypv-meta{ font-size:.78rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+    #youthplan-page .ypv-meta span{ display:inline-flex; align-items:center; gap:.35rem; }
+    #youthplan-page .ypv-actions{ display:flex; gap:.6rem; flex-wrap:wrap; }
+    #youthplan-page .ypv-btn{
+      display:inline-flex; align-items:center; gap:.45rem; font-size:.8rem; font-weight:700;
+      padding:.6rem 1.1rem; border-radius:8px; cursor:pointer; text-decoration:none;
+      border:1.5px solid var(--navy); color:var(--navy); background:#fff; transition:.15s ease;
+    }
+    #youthplan-page .ypv-btn:hover{ background:var(--navy); color:#fff; }
+    #youthplan-page .ypv-btn.ypv-btn-solid{ background:var(--navy); color:#fff; }
+    #youthplan-page .ypv-btn.ypv-btn-solid:hover{ background:var(--navy-mid); }
+    #youthplan-page .ypv-frame-wrap{
+      border:1px solid var(--border,#d8e0ec); border-radius:12px; overflow:hidden;
+      box-shadow:0 4px 18px rgba(11,31,58,.1); background:#f4f6f9;
+    }
+    #youthplan-page .ypv-frame-wrap iframe{ width:100%; height:82vh; min-height:520px; border:0; display:block; }
+    #youthplan-page .ypv-empty{
+      text-align:center; padding:4rem 1.5rem; color:var(--muted); border:1.5px dashed var(--border,#d8e0ec);
+      border-radius:12px; background:#fafbfd;
+    }
+    #youthplan-page .ypv-empty i{ font-size:2.2rem; color:#c7cedb; margin-bottom:1rem; display:block; }
+    #youthplan-page .ypv-empty h4{ color:var(--navy); font-family:'Source Serif 4',serif; margin-bottom:.4rem; }
+    #youthplan-page .ypv-note{
+      display:flex; gap:.6rem; align-items:flex-start; background:#fff4e5; border:1px solid #f0dcb0;
+      color:#a1650e; padding:.9rem 1.1rem; border-radius:10px; font-size:.82rem; line-height:1.6; margin-top:1.2rem;
+    }
+    #youthplan-page .ypv-more{ margin-top:2.2rem; padding-top:1.8rem; border-top:1.5px solid var(--border,#d8e0ec); }
+    #youthplan-page .ypv-more h3{
+      font-family:'Source Serif 4',serif; font-size:1.02rem; color:var(--navy); margin:0 0 .8rem;
+    }
+
+  </style>
+  <div id="youthplan-page" class="page">
+    <div class="page-banner" style="background:linear-gradient(135deg,#7b0d0d,#c0392b)">
+      <div class="pg-label">Governance · Legislative · Sangguniang Kabataan</div>
+      <h1>Local Youth Development Plan</h1>
+      <p>The official roadmap guiding youth programs, projects, and activities for the Sangguniang Kabataan and the
+        Municipality of Cortes.</p>
+    </div>
+    <section style="background:var(--white)">
+      <nav class="crumbs" aria-label="Breadcrumb" id="youthPlanCrumbs"><!-- populated by renderYouthPlanCrumbs() --></nav>
+      <div class="inner" id="youthPlanViewer">
+        <!-- populated live by renderYouthPlanPage() in portal.js from the Admin Console -->
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ PRIVACY POLICY / ACCESSIBILITY / SITEMAP (footer links) ════════ -->
+  <div id="privacy-page" class="page">
+    <div class="page-banner">
+      <div class="pg-label">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>How this website handles the personal information you send us.</p>
+    </div>
+    <section><div class="inner legal-doc">
+      <p>The Municipality of Cortes respects your privacy and handles personal data in line with the Data Privacy Act of 2012 (Republic Act No. 10173).</p>
+      <h2>Information we collect</h2>
+      <ul>
+        <li><strong>Contact Us form:</strong> your first name, last name, email address, the type of concern, and your message.</li>
+        <li><strong>Live chat:</strong> the name you enter (if any) and the messages you send.</li>
+      </ul>
+      <p>You can browse the rest of this website without giving any personal information. The site does not ask visitors to create an account.</p>
+      <h2>How we use it</h2>
+      <p>Your information is used only to read and respond to your inquiry and to refer it to the municipal office concerned. It is not sold or used for advertising.</p>
+      <h2>Who can see it</h2>
+      <p>Messages are stored on the municipal website's server and can be read only by authorized website administrators of the LGU.</p>
+      <h2>Your rights</h2>
+      <p>You may ask to see, correct, or delete the personal information you sent through this website. Send your request through the <a href="#contacts" onclick="return showPage('contacts')">Contact Us</a> page.</p>
+    </div></section>
+  </div>
+
+  <div id="accessibility-page" class="page">
+    <div class="page-banner">
+      <div class="pg-label">Legal</div>
+      <h1>Accessibility</h1>
+      <p>Our aim is a website every Corteseño can use.</p>
+    </div>
+    <section><div class="inner legal-doc">
+      <p>This website is built so it can be used on phones, tablets, and desktop computers, and by people who use a keyboard or assistive technology.</p>
+      <h2>What we have done</h2>
+      <ul>
+        <li>The layout adjusts to small screens, and tables become easy-to-read cards on phones.</li>
+        <li>A "Skip to content" link and visible focus outlines support keyboard navigation.</li>
+        <li>Menus and buttons carry labels for screen readers.</li>
+      </ul>
+      <h2>Tell us about a problem</h2>
+      <p>If any part of this website is hard for you to use, or you need a document in another format, please let us know through the <a href="#contacts" onclick="return showPage('contacts')">Contact Us</a> page.</p>
+    </div></section>
+  </div>
+
+  <div id="sitemap-page" class="page">
+    <div class="page-banner">
+      <div class="pg-label">Website</div>
+      <h1>Sitemap</h1>
+      <p>Every section of the Municipality of Cortes website.</p>
+    </div>
+    <section><div class="inner legal-doc sitemap-grid">
+      <div><h2>About LGU</h2><ul>
+        <li><a href="#lgu" onclick="return showPage('lgu')">About the LGU &amp; Barangays</a></li>
+        <li><a href="#history" onclick="return showPage('history')">History</a></li>
+        <li><a href="#missionvision" onclick="return showPage('missionvision')">Mission &amp; Vision</a></li>
+        <li><a href="#officials" onclick="return showPage('officials')">Municipal Officials</a></li>
+        <li><a href="#departments" onclick="return showPage('departments')">Departments &amp; Offices</a></li>
+      </ul></div>
+      <div><h2>Governance</h2><ul>
+        <li><a href="#governance" onclick="return showPage('governance')">Governance</a></li>
+        <li><a href="#budget" onclick="return showPage('budget')">Budget &amp; Planning / Transparency</a></li>
+        <li><a href="#youthplan" onclick="return showPage('youthplan')">Local Youth Development Plan</a></li>
+        <li><a href="#projects" onclick="return showPage('projects')">Projects</a></li>
+      </ul></div>
+      <div><h2>Services</h2><ul>
+        <li><a href="#services" onclick="return showPage('services')">Services Directory</a></li>
+        <li><a href="#charter" onclick="return showPage('charter')">Citizen's Charter</a></li>
+        <li><a href="#downloads" onclick="return showPage('downloads')">Downloads &amp; Forms</a></li>
+      </ul></div>
+      <div><h2>News &amp; More</h2><ul>
+        <li><a href="#news" onclick="return showPage('news')">News, Announcements &amp; Events</a></li>
+        <li><a href="#news/archive">News Archive</a></li>
+        <li><a href="#tourism" onclick="return showPage('tourism')">Tourism</a></li>
+        <li><a href="#contacts" onclick="return showPage('contacts')">Contact Us</a></li>
+        <li><a href="#privacy" onclick="return showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#accessibility" onclick="return showPage('accessibility')">Accessibility</a></li>
+      </ul></div>
+    </div></section>
+  </div>
+
+  <!-- ════════ ANNUAL BUDGET PAGE ════════ -->
+  <style>
+    /* ---- Annual Budget / Yearly Updates — accordion layout (scoped to #budget-page) ---- */
+    #budget-page .bud-banner{ position:relative; overflow:hidden; }
+    #budget-page .bud-banner-pattern{
+      position:absolute; inset:0; opacity:.10; pointer-events:none;
+      background-image:
+        radial-gradient(circle at 12% 30%, #fff 0, transparent 3px),
+        radial-gradient(circle at 34% 75%, #fff 0, transparent 3px),
+        radial-gradient(circle at 58% 20%, #fff 0, transparent 3px),
+        radial-gradient(circle at 78% 60%, #fff 0, transparent 3px),
+        radial-gradient(circle at 92% 30%, #fff 0, transparent 3px);
+      background-size: 320px 220px;
+    }
+
+    /* ---- Full Disclosure Policy card (scoped to #budget-page) ---- */
+    .fdp-card{
+      background:#fff; border:1px solid #e4e8ee; border-top:4px solid #1c8a5b;
+      border-radius:12px; padding:1.8rem 2rem; margin:2.2rem 0 2.4rem;
+      display:flex; align-items:center; gap:1.6rem;
+      box-shadow:0 1px 4px rgba(11,31,58,.06);
+    }
+    .fdp-logo{
+      width:100px; height:100px; border-radius:50%; flex-shrink:0; overflow:hidden;
+      background:#fff; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 0 0 3px #fff, 0 0 0 5px #1c8a5b;
+      padding:5px;
+    }
+    .fdp-logo img{ width:100%; height:100%; object-fit:contain; }
+    .fdp-logo i{ font-size:2.2rem; color:#1c8a5b; }
+    .fdp-body{ flex:1; min-width:0; }
+    .fdp-body h2{ font-family:'Source Serif 4',serif; font-weight:800; font-size:1.3rem; color:var(--navy,#0b1f3a); margin:0 0 .9rem; }
+    .fdp-quote{ background:#eef1f6; border-left:4px solid #1c8a5b; border-radius:6px; padding:1rem 1.2rem; }
+    .fdp-quote strong{ display:block; color:var(--navy,#0b1f3a); font-size:.9rem; margin-bottom:.4rem; }
+    .fdp-quote p{ font-size:.87rem; color:#33455f; line-height:1.7; margin:0; }
+    
+
+    .yu-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.6rem;
+      border-bottom:2px solid #d7dbe2; padding-bottom:.9rem; margin:.4rem 0 1.6rem; }
+    .yu-head h2{ font-family:'Source Serif 4',serif; font-size:1.55rem; letter-spacing:.02em;
+      color:var(--navy,#0b1f3a); margin:0; text-transform:uppercase; }
+    .yu-head span{ font-size:.82rem; color:#8a94a3; }
+
+    .yu-accordion{ display:flex; flex-direction:column; gap:.55rem; margin-bottom:1rem; }
+    .yu-item{ border-radius:10px; overflow:hidden; border:1px solid #e4e8ee; }
+    .yu-header{
+      width:100%; display:flex; align-items:center; justify-content:space-between; gap:.8rem;
+      background:linear-gradient(180deg,#f3f4f7,#e9ebef); border:none; cursor:pointer;
+      padding:1rem 1.3rem; text-align:left; transition:.15s ease;
+    }
+    .yu-header:hover{ background:linear-gradient(180deg,#eceef2,#e2e5eb); }
+    .yu-header-left{ display:flex; align-items:center; gap:.7rem; font-weight:700; font-size:1rem; color:#7b0d0d; }
+    .yu-header-left i.fa-folder-open, .yu-header-left i.fa-folder{ color:#7b0d0d; font-size:1.05rem; }
+
+    .yu-toggle{
+      width:26px; height:26px; border-radius:50%; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center; background:#fff; color:#7b0d0d;
+      border:1px solid #dfe4ec; font-size:.8rem;
+    }
+    .yu-header.open .yu-toggle{ background:#7b0d0d; color:#fff; border-color:#7b0d0d; }
+
+    /* Yearly Updates: flat list of category links (each opens a popup with that category's documents) */
+    .yu-linklist{ display:flex; flex-direction:column; }
+    .yu-cat-link{
+      display:block; padding:1.1rem .2rem; border-bottom:1px solid #e6e9ef;
+      font-size:1rem; font-weight:700; color:var(--navy,#0b1f3a); text-decoration:underline;
+      cursor:pointer; transition:color .15s ease;
+    }
+    .yu-cat-link:hover{ color:#7b0d0d; }
+    .yu-cat-link:last-child{ border-bottom:none; }
+
+    .yu-panel{ background:#fff; padding:.9rem 1.3rem 1.2rem 2.9rem; }
+    /* Quarterly Updates is a plain, always-visible list — not inside an accordion item — so it needs its own card border/padding instead of the accordion's icon-aligned indent. */
+    .yu-panel--flat{ border-radius:10px; border:1px solid #e4e8ee; padding:1.1rem 1.3rem 1.3rem; }
+    .yu-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.55rem; }
+    .yu-list li{ position:relative; padding-left:1.1rem; }
+    .yu-list li::before{
+      content:''; position:absolute; left:0; top:.55rem; width:6px; height:6px; border-radius:50%; background:#7b0d0d;
+    }
+    .yu-list a{
+      display:inline-flex; align-items:center; gap:.5rem; color:#1f6fb2; text-decoration:none;
+      font-size:.92rem; font-weight:500; padding:.15rem .3rem; border-radius:6px; transition:.15s ease;
+    }
+    .yu-list a:hover{ color:#0b4d80; text-decoration:underline; }
+    .yu-list a i{ color:#7b0d0d; font-size:.85rem; }
+    .yu-list li.yu-latest a{
+      border:1.5px solid #0b1f3a; padding:.4rem .7rem; border-radius:8px; font-weight:700;
+    }
+    .yu-list li.yu-latest::before{ display:none; }
+
+    .yu-note-box{
+      display:flex; gap:.8rem; align-items:flex-start; margin-top:1.8rem;
+      background:#f2f4f8; border-radius:10px; padding:1rem 1.2rem; font-size:.82rem; color:#5a6472;
+    }
+    .yu-note-box i{ color:#8a94a3; margin-top:.15rem; }
+
+    /* Preview + Download action row on each budget document */
+    .yu-list li.yu-doc-row{
+      display:flex; align-items:center; justify-content:space-between; gap:.7rem; flex-wrap:wrap;
+    }
+    .yu-list li.yu-doc-row .yu-doc-title{
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-size:.92rem; font-weight:500; color:#1a2840;
+    }
+    .yu-list li.yu-doc-row .yu-doc-title i{ color:#7b0d0d; font-size:.85rem; }
+    .yu-list li.yu-doc-row.yu-latest .yu-doc-title{
+      border:1.5px solid #0b1f3a; padding:.4rem .7rem; border-radius:8px; font-weight:700;
+    }
+    .yu-doc-actions{ display:flex; gap:.5rem; flex-shrink:0; }
+    .yu-doc-actions button, .yu-doc-actions a{
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.76rem; font-weight:700; padding:.35rem .75rem; border-radius:7px;
+      border:1.5px solid transparent; cursor:pointer; transition:.15s ease; text-decoration:none;
+    }
+    .yu-btn-preview{ background:#fff; border-color:#7b0d0d; color:#7b0d0d; }
+    .yu-btn-preview:hover{ background:#7b0d0d; color:#fff; }
+    .yu-btn-download{ background:#f2f4f8; color:#3c4a5e; }
+    .yu-btn-download:hover{ background:#0b1f3a; color:#fff; }
+    .yu-doc-missing{ font-size:.78rem; color:#a1650e; font-style:italic; }
+
+    
+
+    /* ── PROCUREMENT & BIDDING RESOURCES (Annual Budget page, after Quarterly Updates) ── */
+    .proc-card { background: var(--white); border: 1px solid #e6e9ef; border-radius: 14px; padding: 1.8rem 2rem; margin-top: 2rem; }
+    .proc-card h2 { font-size: 1.15rem; font-weight: 800; color: #1a2840; margin: 0 0 1.2rem; padding-bottom: 1rem; border-bottom: 2px solid #1a2840; }
+    .proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    
+    
+    .proc-item {
+      display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+      border: 1px solid #e2e6ec; border-radius: 10px; padding: 1rem 1.1rem;
+      font-size: .9rem; font-weight: 600; color: #1c8a5b; line-height: 1.4;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .proc-item:hover { border-color: #1c8a5b; background: #f4fbf8; }
+    .proc-item i { flex-shrink: 0; font-size: .82rem; }
+    .proc-item.proc-item--empty { color: var(--muted); cursor: default; font-weight: 500; }
+    .proc-item.proc-item--empty:hover { border-color: #e2e6ec; background: none; }
+    .proc-item--empty .proc-soon { font-size: .72rem; font-style: italic; color: #b7c0cc; white-space: nowrap; }
+  </style>
+
+  <div id="budget-page" class="page">
+    <div class="page-banner bud-banner" style="background:linear-gradient(135deg,#7b0d0d,#c0392b)">
+      <div class="bud-banner-pattern"></div>
+      <div class="pg-label">Governance</div>
+      <h1>Budget &amp; Planning</h1>
+      <p>The financial plan of the Municipality of Cortes — how your taxes are allocated and spent, and which office is responsible for each program.</p>
+    </div>
+    <section style="background:var(--off)">
+      <div class="inner">
+
+        <div class="fdp-card">
+          <div class="fdp-logo">
+            <img src="/transparency-seal.png" alt="Philippine Transparency Seal" onerror="this.parentElement.innerHTML='<i class=\'fa fa-shield-halved\'></i>'">
+          </div>
+          <div class="fdp-body">
+            <h2>Full Disclosure Policy (FDP)</h2>
+            <div class="fdp-quote">
+              <strong>DILG Memorandum Circular No. 2010-83:</strong>
+              <p>To support the full disclosure of local government units' Local Budget and Finances, Bids, and Public Offerings, the Municipality of Cortes publishes the required statements of disclosures on matters of general public interest.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="yu-head">
+          <h2>Budget &amp; Planning Records</h2>
+          <span>Each record names the office or program responsible for it</span>
+        </div>
+        <div class="fbar" role="search" aria-label="Filter budget and planning records">
+          <div class="fbar-field fbar-field--grow">
+            <label for="bpSearch">Search</label>
+            <input type="search" id="bpSearch" placeholder="Search programs, projects, funding source…" oninput="renderBudgetPlans()">
+          </div>
+          <div class="fbar-field">
+            <label for="bpOffice">Office / Program Owner</label>
+            <select id="bpOffice" onchange="renderBudgetPlans()"><option value="">All Offices</option></select>
+          </div>
+          <div class="fbar-field">
+            <label for="bpYear">Fiscal Year</label>
+            <select id="bpYear" onchange="renderBudgetPlans()"><option value="">All Years</option></select>
+          </div>
+        </div>
+        <div class="dt-wrap" style="margin-bottom:2.4rem;"><table class="dt dt--cards" id="bpTable">
+          <thead><tr><th>Fiscal Year</th><th>Office / Department</th><th>Program / Project</th><th>Funding Source</th><th>Budget Amount</th><th>Status</th><th>Documents</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+
+        <div class="yu-head">
+          <h2>Yearly Updates</h2>
+          <span>Click a category to view and download reports</span>
+        </div>
+
+        <div class="yu-accordion yu-linklist" id="budgetAccordion"><!-- populated live by renderBudgetPage() in portal.js from the Admin Console --></div>
+
+        <div class="yu-head" style="margin-top:2.4rem;">
+          <h2>Quarterly Updates</h2>
+          <span>Reports posted for the current quarter</span>
+        </div>
+
+        <div class="yu-panel yu-panel--flat yu-linklist" id="quarterlyPanel"><!-- populated live by renderBudgetPage() in portal.js from the Admin Console --></div>
+
+        <div class="yu-note-box">
+          <i class="fa fa-info-circle"></i>
+          <span>Documents are posted in compliance with Section 93 of the General Appropriations Act (Transparency Seal) and the Freedom of Information program. Click <strong>Preview</strong> to view a document without downloading, or <strong>Download</strong> to save it.</span>
+        </div>
+
+        <div class="proc-card">
+          <h2>Procurement &amp; Bidding Resources</h2>
+          <div class="proc-grid" id="procurementResourcesGrid"><!-- populated live by renderProcurementResources() in portal.js --></div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+    </main><!-- /site-content -->
+  </div><!-- /site-layout -->
+
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-top-inner">
+        <div class="footer-top-left">
+          <div class="footer-top-brand">
+            <img src="/OFF LOGO.png" alt="Cortes Seal" class="footer-top-logo" onerror="this.style.display='none'">
+            <div>
+              <div class="footer-top-eyebrow">Republic of the Philippines</div>
+              <div class="footer-top-title">Municipality of Cortes</div>
+            </div>
+          </div>
+          <div class="footer-top-offices">
+            <div class="footer-top-office">
+              <div class="footer-top-office-label">Municipal Mayor's Office</div>
+              <div class="footer-top-office-addr">2nd Floor, Cortes Municipal Hall,<br>Malayo Sur, Cortes, Bohol</div>
+            </div>
+            <div class="footer-top-office">
+              <div class="footer-top-office-label">Municipal Information Desk</div>
+              <div class="footer-top-office-addr">1st Floor, Cortes Municipal Hall,<br>Malayo Sur, Cortes, Bohol</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-top-compliance">
+          <div class="footer-top-comp-item">
+            <div class="footer-top-comp-icon"><img src="/rop-seal.webp" alt="Republic of the Philippines"></div>
+            <div>
+              <div class="footer-top-comp-title">Republic of the Philippines</div>
+              <div class="footer-top-comp-desc">All content on this website is considered public domain, unless stated otherwise.</div>
+            </div>
+          </div>
+          <div class="footer-top-comp-item">
+            <div class="footer-top-comp-icon"><img src="/foi-seal-white.png" alt="Freedom of Information"></div>
+            <div>
+              <div class="footer-top-comp-title">Freedom of Information</div>
+              <div class="footer-top-comp-desc">Learn more about the Freedom of Information program and how it applies to the Municipality of Cortes.</div>
+            </div>
+          </div>
+          <div class="footer-top-comp-item">
+            <div class="footer-top-comp-icon"><img src="/transparency-seal.png" alt="Philippine Transparency Seal"></div>
+            <div>
+              <div class="footer-top-comp-title">Philippine Transparency Seal</div>
+              <div class="footer-top-comp-desc">The Transparency Seal promotes public accountability by ensuring easy access to essential information about the Municipality of Cortes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Municipality of Cortes. All rights reserved.</span>
+      <span class="footer-legal-links"><a href="#privacy" onclick="return showPage('privacy')">Privacy Policy</a> &nbsp;·&nbsp; <a href="#accessibility" onclick="return showPage('accessibility')">Accessibility</a> &nbsp;·&nbsp; <a href="#sitemap" onclick="return showPage('sitemap')">Sitemap</a></span>
+    </div>
+  </footer>
+
+
+  <!-- ── CONTACT MODAL ── -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeContact()">✕</button>
+      <h2>Contact Us</h2>
+      <p>Send us a message and our team will get back to you within 1–2 business days.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Juan"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="dela Cruz"></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+      <div class="form-group">
+        <label>Concern / Department</label>
+        <select>
+          <option>General Inquiry</option>
+          <option>Business Permit</option>
+          <option>Health Services</option>
+          <option>Social Welfare</option>
+          <option>Tourism</option>
+          <option>Infrastructure</option>
+          <option>Agriculture</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea
+          placeholder="Describe your concern or inquiry…"></textarea></div>
+      <button class="btn-submit" onclick="submitForm()">Send Message</button>
+    </div>
+  </div>
+
+  <!-- ── PDF PREVIEW MODAL ── -->
+  <style>
+    #pdfPreviewModal .modal{
+      max-width: 920px;
+      width: 100%;
+      padding: 1.5rem 1.5rem 1.7rem;
+    }
+    .pdf-modal-head{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
+      margin-bottom: 1.1rem; padding-right: 2.4rem;
+    }
+    .pdf-modal-head h2{ font-size:1.15rem; margin:0 0 .2rem; line-height:1.35; }
+    .pdf-modal-head p{ margin:0; font-size:.78rem; color:var(--muted); }
+    .pdf-modal-dl{
+      flex-shrink:0;
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:var(--navy); color:#fff; font-size:.8rem; font-weight:700;
+      padding:.55rem 1rem; border-radius:8px; text-decoration:none; transition:.15s ease;
+    }
+    .pdf-modal-dl:hover{ background:var(--navy-mid); }
+    .pdf-frame-wrap{
+      width:100%; height:72vh; min-height:360px;
+      border-radius:10px; overflow:hidden; border:1px solid var(--border); background:var(--off);
+    }
+    .pdf-frame-wrap iframe{ width:100%; height:100%; border:0; display:block; }
+    
+  </style>
+  <div class="modal-overlay" id="pdfPreviewModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closePdfPreview()">✕</button>
+      <div class="pdf-modal-head">
+        <div>
+          <h2 id="pdfPreviewTitle">Document Preview</h2>
+          <p>Viewing without downloading — use the button to save a copy instead.</p>
+        </div>
+        <a class="pdf-modal-dl" id="pdfPreviewDownload" href="#" download target="_blank" rel="noopener">
+          <i class="fa fa-download"></i> Download
+        </a>
+      </div>
+      <div class="pdf-frame-wrap">
+        <iframe id="pdfPreviewFrame" src="" title="PDF preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- READ MORE MODAL (shared by News cards and Announcement cards) -->
+  <div class="modal-overlay" id="readMoreModal" onclick="if(event.target===this)closeReadMoreModal()">
+    <div class="modal rm-modal">
+      <button class="modal-close" onclick="closeReadMoreModal()">✕</button>
+      <div class="rm-image" id="rmModalImage"></div>
+      <div class="rm-meta">
+        <span class="rm-tag" id="rmModalTag"></span>
+        <span class="rm-date" id="rmModalDate"></span>
+      </div>
+      <h2 id="rmModalTitle"></h2>
+      <p class="rm-text" id="rmModalText"></p>
+    </div>
+  </div>
+
+  <!-- DETAIL MODAL (service process / project details) -->
+  <div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetailModal()" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <div class="modal xmodal">
+      <button class="modal-close" onclick="closeDetailModal()" aria-label="Close">✕</button>
+      <div id="detailModalBody"></div>
+    </div>
+  </div>
+
+  <!-- IMAGE LIGHTBOX (used by Project card photos) -->
+  <div class="img-lightbox" id="imgLightbox" onclick="closeImgLightbox()">
+    <img id="imgLightboxImg" src="" alt="">
+  </div>
+
+  <!-- BUDGET CATEGORY MODAL (Yearly Updates: shows a category's documents, with Preview/Download) -->
+  <div class="modal-overlay" id="budgetCategoryModal" onclick="if(event.target===this)closeBudgetCategoryModal()">
+    <div class="modal" style="max-width:600px;">
+      <button class="modal-close" onclick="closeBudgetCategoryModal()">✕</button>
+      <h2 id="budgetCatModalTitle"></h2>
+      <ul class="yu-list" id="budgetCatModalList"></ul>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ LGU CHAT ASSISTANT ════════════════════════════ -->
+  <style>
+    :root{
+      --cw-green:#0aa550;
+      --cw-green-dark:#08903f;
+      --cw-navy:var(--navy,#0b1f3a);
+      --cw-navy-dark:#081426;
+    }
+    #cwLauncher{
+      position:fixed; right:22px; bottom:22px; z-index:9998;
+      width:60px; height:60px; border-radius:50%;
+      background:var(--cw-navy); color:#fff; border:none;
+      box-shadow:0 6px 20px rgba(11,31,58,.45);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; font-size:1.5rem; transition:transform .2s ease;
+    }
+    #cwLauncher:hover{ transform:scale(1.06); }
+    #cwLauncher .cw-badge{
+      position:absolute; top:-4px; right:-4px; background:#e63946; color:#fff;
+      font-size:.65rem; font-weight:700; width:18px; height:18px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+    }
+    #cwWindow{
+      position:fixed; right:22px; bottom:96px; z-index:9999;
+      width:340px; max-width:92vw; height:520px; max-height:78vh;
+      background:#fff; border-radius:14px; overflow:hidden;
+      box-shadow:0 12px 40px rgba(0,0,0,.25);
+      display:none; flex-direction:column;
+      font-family:'Inter',sans-serif;
+    }
+    #cwWindow.open{ display:flex; }
+    .cw-header{
+      background:linear-gradient(150deg,var(--navy,#0b1f3a),var(--navy-mid,#102b52)); color:#fff; padding:1.1rem 1.2rem;
+      position:relative;
+    }
+    .cw-header h3{ margin:0 0 .3rem; font-size:1.3rem; font-weight:800; }
+    .cw-header p{ margin:0; font-size:.82rem; opacity:.92; line-height:1.4; }
+    .cw-staff-status{ display:flex; align-items:center; gap:.4rem; margin-top:.7rem; font-size:.74rem; font-weight:600; color:rgba(255,255,255,.9); }
+    .cw-staff-dot{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.5); flex-shrink:0; }
+    .cw-staff-status.online .cw-staff-dot{ background:#2ecc71; box-shadow:0 0 0 3px rgba(46,204,113,.3); }
+    .cw-staff-status.offline .cw-staff-dot{ background:rgba(255,255,255,.4); }
+    .cw-live-btn{
+      display:block; width:100%; text-align:center; margin-top:.5rem;
+      background:#fff; color:var(--cw-navy-dark,#081426); border:none; border-radius:20px;
+      font-size:.8rem; font-weight:700; padding:.55rem .8rem; cursor:pointer; transition:transform .15s ease;
+    }
+    .cw-live-btn:hover{ transform:translateY(-1px); }
+    .cw-msg.admin{ background:var(--gold,#c9a84c); color:var(--navy,#0b1f3a); align-self:flex-start; border-bottom-left-radius:2px; }
+    .cw-close{
+      position:absolute; top:.7rem; right:.8rem; background:rgba(255,255,255,.18);
+      border:none; color:#fff; width:26px; height:26px; border-radius:50%;
+      cursor:pointer; font-size:.85rem; line-height:1;
+    }
+    .cw-body{
+      flex:1; overflow-y:auto; padding:1rem; background:#f4f7f6;
+      display:flex; flex-direction:column; gap:.6rem;
+    }
+    .cw-msg{ max-width:85%; padding:.6rem .8rem; border-radius:12px; font-size:.85rem; line-height:1.45; }
+    .cw-msg.bot{ background:#fff; align-self:flex-start; border-bottom-left-radius:2px; box-shadow:0 1px 3px rgba(0,0,0,.08); color:#1c2b2f;}
+    .cw-msg.user{ background:var(--cw-navy); color:#fff; align-self:flex-end; border-bottom-right-radius:2px; }
+    .cw-quick{ display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.2rem; }
+    .cw-quick button{
+      background:#fff; border:1px solid var(--cw-navy); color:var(--cw-navy);
+      font-size:.75rem; padding:.35rem .7rem; border-radius:20px; cursor:pointer;
+      transition:background .15s ease;
+    }
+    .cw-quick button:hover{ background:#e8edf5; }
+    .cw-inputbar{
+      display:flex; gap:.5rem; padding:.7rem; border-top:1px solid #e5e5e5; background:#fff;
+    }
+    .cw-inputbar input{
+      flex:1; border:1px solid #ddd; border-radius:20px; padding:.55rem .9rem; font-size:.85rem; outline:none;
+    }
+    .cw-inputbar input:focus{ border-color:var(--cw-navy); }
+    .cw-inputbar button{
+      background:var(--cw-navy); color:#fff; border:none; width:38px; height:38px; border-radius:50%;
+      cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .cw-inputbar button:hover{ background:var(--cw-navy-dark); }
+    .cw-typing{ display:flex; gap:4px; padding:.5rem .8rem; }
+    .cw-typing span{ width:6px; height:6px; border-radius:50%; background:var(--cw-navy); opacity:.5; animation:cwBlink 1.1s infinite; }
+    .cw-typing span:nth-child(2){ animation-delay:.15s; }
+    .cw-typing span:nth-child(3){ animation-delay:.3s; }
+    @keyframes cwBlink{ 0%,80%,100%{opacity:.3} 40%{opacity:1} }
+    
+  </style>
+
+  <script>
+    // ── Cortes LGU Chat Assistant: lightweight, fully client-side, no external service required ──
+    var cwOpened = false;
+    var cwHistoryStarted = false;
+
+    var cwKB = [
+      { keys:['renew permit','permit renewal','renewal'], reply:"Business permit <strong>renewals</strong> are due every <strong>January 20</strong>. Bring your previous year's permit, income statement, and Barangay Business Clearance to the Business Permit &amp; Licensing Office." },
+      { keys:['birth certificate','marriage certificate','death certificate','civil registry','civil registrar'], reply:"Civil registry documents (birth, marriage, death certificates) are issued by the <strong>Office of the Civil Registrar</strong>, Municipal Hall Ground Floor. Bring a request form and valid ID. Fee: ₱100.00 per copy." },
+      { keys:['real property tax','rpt','property tax','land tax'], reply:"Real Property Tax can be paid at the <strong>Municipal Treasurer's Office</strong>. Bring your Tax Declaration and previous Official Receipt. Pay by <strong>March 31</strong> for a 10% early-payment discount." },
+      { keys:['planning office','mpdc','development office'], reply:"The <strong>Municipal Planning &amp; Development Office</strong> handles zoning clearances, zoning certifications, and local development planning for Cortes." },
+      { keys:['scholarship'], reply:"Educational assistance and <strong>scholarship programs</strong> are coordinated through the LGU. Visit the Services Directory or the Municipal Hall for current application periods and requirements." },
+      { keys:['health','clinic','vaccination','immunization','philhealth'], reply:"The <strong>Municipal Health Office</strong> (Poblacion) offers free consultations and vaccinations, Mon–Fri 8AM–5PM, walk-ins welcome. For PhilHealth indigent enrollment, bring your NHTS/4Ps affiliation or a Certificate of Indigency." },
+      { keys:['4ps','pantawid'], reply:"The <strong>Pantawid Pamilyang Pilipino Program (4Ps) Office</strong> administers the national conditional cash transfer program for qualified beneficiary families in Cortes." },
+      { keys:['social welfare','mswdo'], reply:"The <strong>Social Welfare &amp; Development Office (MSWDO)</strong> handles 4Ps, Solo Parent, PWD, Senior Citizen, day care monitoring, CICL cases, and VAWC assistance — all free of charge." },
+      { keys:['agriculture','farmer','seeds','fertilizer','livestock','fishing permit'], reply:"The <strong>Municipal Agriculture Office</strong> supports farmers and fisherfolk with livestock treatment, farm input distribution (seeds/fertilizer), fishing permits, and PO/DOLE registration assistance." },
+      { keys:['dilg'], reply:"The <strong>DILG Office</strong> in Cortes is the local field office of the Department of the Interior and Local Government, providing oversight and coordination for local governance programs." },
+      { keys:['police','pnp','fire','bfp','peace and order'], reply:"Peace and order and fire safety concerns are coordinated through the <strong>PNP / BFP Office</strong> at the Municipal Hall." },
+      { keys:['disaster','ldrrmo','calamity','evacuation'], reply:"The <strong>LDRRMO</strong> (Local Disaster Risk Reduction &amp; Management Office) handles disaster preparedness, response coordination, and community resilience programs." },
+      { keys:['tourism','tourist spot','visit cortes','things to do'], reply:"Curious about Cortes? Check out the <strong>Tourism</strong> page for spots, getting-there tips, and where to stay. Want me to take you there?" },
+      { keys:['ordinance','resolution','sangguniang bayan','legislation'], reply:"Ordinances and resolutions are enacted by the <strong>Sangguniang Bayan</strong>. For copies, please visit the Office of the SB Secretary at the Municipal Hall. You can find the office under <strong>Governance → Legislative</strong>." },
+      { keys:['budget report','annual budget','appropriation','transparency seal','transparency','foi','freedom of information','procurement','bid'], reply:"Budget, procurement and other transparency documents are posted on the <strong>Budget &amp; Planning / Transparency</strong> page under Governance." },
+      { keys:['citizen charter',"citizen's charter",'citizens charter'], reply:"The <strong>Citizen's Charter</strong> lists every service by office with its requirements, procedure, processing time and fees. It's under Services → Citizen's Charter." },
+      { keys:['youth', 'sangguniang kabataan', 'sk '], reply:"The <strong>Local Youth Development Plan</strong> outlines programs and activities for the Sangguniang Kabataan — you can view it on the Local Youth Development Plan page under Governance." },
+      { keys:['services directory','list of services','what services','all services'], reply:"The full <strong>Services Directory</strong> lists every municipal service by office — requirements, fees, and processing times included. It's under Services → Services Directory." },
+      { keys:['department','office list','municipal offices'], reply:"You can see every municipal department and office — DILG, Treasury, MSWDO, Assessor, Engineering, and more — on the <strong>Departments &amp; Offices</strong> page under About LGU." },
+      { keys:['mayor','vice mayor','official','councilor'], reply:"The Municipal Mayor is <strong>Hon. Rodrigo Dennis M. Uy</strong>. You can see the full list of officials on the <strong>Municipal Officials</strong> page." },
+      { keys:['barangay','brgy','punong barangay','kagawad'], reply:"Cortes has <strong>14 barangays</strong>: De la Paz, Fatima, Loreto, Lourdes, Malayo Norte, Malayo Sur, Monserrat, New Lourdes, Patrocinio, Poblacion, Rosario, Salvador, San Roque, and Upper de la Paz. You can view each barangay's officials and contact details on the <strong>About LGU</strong> page." },
+      { keys:['office hours','open','hours'], reply:"Most municipal offices are open <strong>Monday–Friday, 8:00 AM – 5:00 PM</strong>." },
+      { keys:['contact','email','phone','number','hotline'], reply:"You can reach the LGU at <strong>lgucortesofficial@gmail.com</strong> or through the Contact Us form. Want me to open it for you?" , action:'contact'},
+      { keys:['hello','hi','hey','good morning','good afternoon'], reply:"Hello! 👋 I'm the Cortes LGU virtual assistant. Ask me about permits, certificates, taxes, health services, or tourism — or tap a quick option below." },
+      { keys:['thank','thanks','salamat'], reply:"You're very welcome! Is there anything else I can help you with?" },
+      { keys:['human','agent','person','representative','talk to someone'], reply:"Sure — I'll open our Contact Us form so a staff member can follow up with you directly.", action:'contact' }
+    ];
+
+    var cwQuickOptions = [
+      {label:"Business Permit", q:"How do I apply for a business permit?"},
+      {label:"Civil Registry", q:"How do I get a birth certificate?"},
+      {label:"Real Property Tax", q:"How do I pay real property tax?"},
+      {label:"Building Permit", q:"How do I get a building permit?"},
+      {label:"Zoning Clearance", q:"How do I get a zoning clearance?"},
+      {label:"Social Welfare (MSWDO)", q:"What social welfare programs are available?"},
+      {label:"Talk to a Staff", q:"I want to talk to a human"}
+    ];
+
+    function cwToggle(){
+      var win = document.getElementById('cwWindow');
+      var icon = document.getElementById('cwLauncherIcon');
+      var badge = document.getElementById('cwBadge');
+      cwOpened = !cwOpened;
+      if(cwOpened){
+        win.classList.add('open');
+        icon.className = 'fa fa-chevron-down';
+        badge.style.display = 'none';
+        if(!cwHistoryStarted){
+          cwHistoryStarted = true;
+          cwAddBot("Hi there 👋 Need help? I'm the Cortes LGU virtual assistant. Ask me about permits, certificates, taxes, health services, hotlines, or anything about the municipality.");
+          cwAddQuickOptions();
+        }
+      } else {
+        win.classList.remove('open');
+        icon.className = 'fa fa-comment-dots';
+      }
+    }
+
+    function cwAddBot(html){
+      var body = document.getElementById('cwBody');
+      var div = document.createElement('div');
+      div.className = 'cw-msg bot';
+      div.innerHTML = html;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function cwAddUser(text){
+      var body = document.getElementById('cwBody');
+      var div = document.createElement('div');
+      div.className = 'cw-msg user';
+      div.textContent = text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function cwAddQuickOptions(){
+      var body = document.getElementById('cwBody');
+      var wrap = document.createElement('div');
+      wrap.className = 'cw-quick';
+      cwQuickOptions.forEach(function(opt){
+        var btn = document.createElement('button');
+        btn.textContent = opt.label;
+        btn.onclick = function(){ cwHandle(opt.q); };
+        wrap.appendChild(btn);
+      });
+      body.appendChild(wrap);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function cwTypingShow(){
+      var body = document.getElementById('cwBody');
+      var t = document.createElement('div');
+      t.className = 'cw-msg bot cw-typing';
+      t.id = 'cwTypingIndicator';
+      t.innerHTML = '<span></span><span></span><span></span>';
+      body.appendChild(t);
+      body.scrollTop = body.scrollHeight;
+    }
+    function cwTypingHide(){
+      var t = document.getElementById('cwTypingIndicator');
+      if(t) t.remove();
+    }
+
+    // ── Live service answers ──
+    // Replies about a specific service are built from the same "services"
+    // collection that feeds the Services Directory and Citizen's Charter, so
+    // the chatbot can never disagree with what the Admin Console says.
+    var CW_STOP = ['issuance','official','receipts','receipt','certification','certifications','program','programs','office','municipal','their','with','from','that','this','what','where','when','does','have','need','want','how','get','apply','the','for','and','about','please','cortes'];
+    var CW_SYNONYMS = [[/\bsenior citizens?\b|\bosca\b/g,'elderly'],[/\brpt\b/g,'real property taxes'],[/\bvawc\b/g,'violence women children'],[/\blocational\b/g,'location zoning'],
+      [/\bpwd\b/g,'persons disabilities'],[/\bcommunity tax certificate\b/g,'cedula'],[/\bday ?care\b/g,'day care'],[/\bbplo\b/g,'business permit']];
+    function cwTokens(str){
+      var t = String(str || '').toLowerCase().replace(/[^a-z0-9 ]+/g,' ').split(/\s+/), out = [];
+      for(var i=0;i<t.length;i++){
+        var w = t[i].replace(/ies$/,'y').replace(/s$/,'');
+        if(w.length >= 3 && CW_STOP.indexOf(w) === -1 && CW_STOP.indexOf(t[i]) === -1 && out.indexOf(w) === -1) out.push(w);
+      }
+      return out;
+    }
+    function cwEsc(v){ return String(v == null ? '' : v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function cwOfficeName(id){
+      var offs = (typeof cmsGetCollection === 'function') ? cmsGetCollection('departments') : [];
+      for(var i=0;i<offs.length;i++){ if(offs[i].id === id) return offs[i].name; }
+      return '';
+    }
+    function cwLines(v){ return String(v || '').split(/\n+/).map(function(x){ return x.trim(); }).filter(Boolean); }
+    // Returns {score, matches:[service,...]} for the best-matching service name(s).
+    function cwMatchServices(text){
+      if(typeof cmsGetCollection !== 'function') return { score:0, matches:[] };
+      var q = String(text || '').toLowerCase();
+      CW_SYNONYMS.forEach(function(p){ q = q.replace(p[0], p[1]); });
+      var qt = cwTokens(q), best = 0, matches = [];
+      if(!qt.length) return { score:0, matches:[] };
+      cmsGetCollection('services').forEach(function(svc){
+        var nt = cwTokens(svc.name), score = 0;
+        qt.forEach(function(w){ if(nt.indexOf(w) !== -1) score++; });
+        if(score > best){ best = score; matches = [svc]; }
+        else if(score === best && score > 0){ matches.push(svc); }
+      });
+      return { score:best, matches:matches };
+    }
+    function cwServiceReply(res){
+      if(res.matches.length > 1){
+        var list = res.matches.slice(0,6).map(function(x){ return '• ' + cwEsc(x.name); }).join('<br>');
+        return 'I found a few services that match:<br>' + list + '<br>Tell me which one, or open the <strong>Services Directory</strong> for full details.';
+      }
+      var svc = res.matches[0], office = cwOfficeName(svc.officeId), parts = ['<strong>' + cwEsc(svc.name) + '</strong>' + (office ? ' — ' + cwEsc(office) : '')];
+      var reqs = cwLines(svc.requirements), steps = cwLines(svc.steps);
+      if(reqs.length) parts.push('<strong>Requirements:</strong><br>' + reqs.map(function(x){ return '• ' + cwEsc(x); }).join('<br>'));
+      if(steps.length) parts.push('<strong>Procedure:</strong><br>' + steps.map(function(x,i){ return (i+1) + '. ' + cwEsc(x); }).join('<br>'));
+      if(svc.fees) parts.push('<strong>Fees:</strong> ' + cwEsc(svc.fees));
+      if(svc.processingTime) parts.push('<strong>Processing time:</strong> ' + cwEsc(svc.processingTime));
+      parts.push('<a href="#service/' + encodeURIComponent(svc.id) + '">View full process in the Services Directory →</a>');
+      return parts.join('<br><br>');
+    }
+
+    function cwFindReply(text){
+      // 1) a clear service match (two or more words of the service name)
+      var res = cwMatchServices(text);
+      if(res.score >= 2) return { reply: cwServiceReply(res) };
+      var lower = text.toLowerCase();
+      for(var i=0;i<cwKB.length;i++){
+        var entry = cwKB[i];
+        for(var j=0;j<entry.keys.length;j++){
+          if(lower.indexOf(entry.keys[j]) !== -1){
+            return entry;
+          }
+        }
+      }
+      // 3) a looser, one-word service match (e.g. "cedula")
+      if(res.score === 1) return { reply: cwServiceReply(res) };
+      return null;
+    }
+
+    function cwHandle(text){
+      if(!text || !text.trim()) return;
+      cwAddUser(text);
+      var entry = cwFindReply(text);
+      cwTypingShow();
+      setTimeout(function(){
+        cwTypingHide();
+        if(entry){
+          cwAddBot(entry.reply);
+          if(entry.action === 'contact'){
+            setTimeout(function(){
+              if(typeof openContact === 'function'){ openContact(); }
+            }, 500);
+          }
+        } else {
+          cwAddBot("I don't have an exact answer for that yet, but I can connect you with our staff. Want me to open the <strong>Contact Us</strong> form, or try asking about permits, certificates, taxes, health services, or tourism?");
+          cwAddQuickOptions();
+        }
+      }, 550);
+    }
+
+    function cwSend(){
+      var input = document.getElementById('cwInput');
+      var val = input.value.trim();
+      if(!val) return;
+      input.value = '';
+      if(cwStaffOnline){
+        cwSendLiveMessage(val);
+      } else {
+        cwHandle(val);
+      }
+    }
+
+    // ── Live chat with staff — automatic: whenever staff is online, whatever the
+    // visitor types goes straight to a real conversation with them (backed by
+    // /api/chat/*), with no button to click. When staff is offline, the FAQ bot
+    // above (cwHandle) answers instead, and any resumed session below still
+    // polls quietly for replies that arrive after staff comes back online. ──
+    var cwSessionId = null;
+    try { cwSessionId = localStorage.getItem('cortesChatSessionId') || null; } catch(e) {}
+    var cwRenderedMsgIds = {};
+    var cwPollTimer = null;
+    var cwStaffOnline = false;
+    var cwGreetedLive = false;
+
+    function cwUpdateStaffStatus(online){
+      var wasOnline = cwStaffOnline;
+      cwStaffOnline = online;
+      var el = document.getElementById('cwStaffStatus');
+      var txt = document.getElementById('cwStaffStatusText');
+      if(el && txt){
+        el.className = 'cw-staff-status ' + (online ? 'online' : 'offline');
+        txt.textContent = online ? 'Staff Online — your messages go straight to them' : 'Staff Offline — ask me anything below';
+      }
+      // Staff just came online mid-conversation: let the visitor know without them asking.
+      if(online && !wasOnline && cwGreetedLive){
+        cwAddBot("Our staff just came online — anything else you type now goes straight to them.");
+      }
+      cwEnsurePolling();
+    }
+
+    function cwCheckAdminStatus(){
+      fetch('/api/admin/status').then(function(r){ return r.json(); }).then(function(d){
+        cwUpdateStaffStatus(!!d.online);
+      }).catch(function(){});
+    }
+    cwCheckAdminStatus();
+    setInterval(cwCheckAdminStatus, 20000);
+
+    function cwEnsurePolling(){
+      // Keep polling quietly whenever there's an existing session, so replies that
+      // arrive (even while staff was offline a moment ago) show up on their own.
+      if(cwSessionId && !cwPollTimer){
+        cwPollTimer = setInterval(cwLoadLiveMessages, 4000);
+        cwLoadLiveMessages();
+      }
+    }
+    cwEnsurePolling();
+
+    function cwAddLiveBubble(m){
+      var body = document.getElementById('cwBody');
+      var div = document.createElement('div');
+      div.className = 'cw-msg ' + (m.sender === 'admin' ? 'admin' : 'user');
+      div.textContent = m.text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function cwEnsureSession(){
+      if(cwSessionId) return Promise.resolve(cwSessionId);
+      return fetch('/api/chat/start', {
+        method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({visitorName:'Website Visitor'})
+      }).then(function(r){ return r.json(); }).then(function(d){
+        cwSessionId = d.sessionId;
+        try { localStorage.setItem('cortesChatSessionId', cwSessionId); } catch(e) {}
+        cwEnsurePolling();
+        return cwSessionId;
+      });
+    }
+
+    function cwLoadLiveMessages(){
+      if(!cwSessionId) return;
+      fetch('/api/chat/' + cwSessionId + '/messages').then(function(r){
+        if(!r.ok) throw new Error('not found');
+        return r.json();
+      }).then(function(data){
+        data.messages.forEach(function(m){
+          if(cwRenderedMsgIds[m.id]) return;
+          cwRenderedMsgIds[m.id] = true;
+          cwAddLiveBubble(m);
+        });
+        if(data.session.visitorUnread){
+          fetch('/api/chat/' + cwSessionId + '/visitor-read', {method:'POST'}).catch(function(){});
+        }
+      }).catch(function(){
+        // session no longer exists server-side (e.g. fresh dev database) — drop it so a new one is created next time
+        cwSessionId = null;
+        try { localStorage.removeItem('cortesChatSessionId'); } catch(e) {}
+        if(cwPollTimer){ clearInterval(cwPollTimer); cwPollTimer = null; }
+      });
+    }
+
+    function cwSendLiveMessage(text){
+      cwEnsureSession().then(function(){
+        if(!cwGreetedLive){
+          cwGreetedLive = true;
+          cwAddBot("You're chatting directly with our staff now — they'll reply here.");
+        }
+        return fetch('/api/chat/' + cwSessionId + '/message', {
+          method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({text:text})
+        });
+      }).then(function(){
+        cwLoadLiveMessages();
+      }).catch(function(){
+        cwAddBot("Sorry, that message couldn't be sent. Please try again.");
+      });
+    }
+  </script>
+  <!-- ═══════════════════════════ /LGU CHAT ASSISTANT ═══════════════════════════ -->
+
+  <script src="portal.js?v=61"></script>
+
+  </div>
+  </div>
+
+  <!-- The scroll-to-top button and the chat widget live OUTSIDE the scale wrapper
+       above, on purpose: they use `position:fixed` to stay pinned to the corner of
+       the actual browser window. If they were inside the scaled wrapper, the CSS
+       transform on that wrapper would make them scroll away with the page instead
+       of floating, on any screen narrower than the 1440px design width. -->
+  <!-- SCROLL TOP -->
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <button id="cwLauncher" onclick="cwToggle()" aria-label="Open chat with the Cortes LGU Assistant">
+    <i class="fa fa-comment-dots" id="cwLauncherIcon"></i>
+    <span class="cw-badge" id="cwBadge">1</span>
+  </button>
+
+  <div id="cwWindow">
+    <div class="cw-header">
+      <button class="cw-close" onclick="cwToggle()">✕</button>
+      <h3>Hi there 👋</h3>
+      <p>Ask me about permits, certificates, taxes, health services, hotlines, or anything about the Municipality of Cortes.</p>
+      <div id="cwStaffStatus" class="cw-staff-status"><span class="cw-staff-dot"></span> <span id="cwStaffStatusText">Checking staff availability…</span></div>
+    </div>
+    <div class="cw-body" id="cwBody"></div>
+    <div class="cw-inputbar">
+      <input type="text" id="cwInput" placeholder="Type your question…" onkeydown="if(event.key==='Enter')cwSend()">
+      <button onclick="cwSend()" aria-label="Send"><i class="fa fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- (The old "scale the 1440px desktop layout down to fit" script was removed:
+       the layout is now genuinely responsive — see the RESPONSIVE section of portal.css.) -->
+</body>
+
+</html>

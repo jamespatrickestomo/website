@@ -1,0 +1,9 @@
+{
+  "name": "cortes-final-portal",
+  "version": "1.0.0",
+  "description": "Cortes LGU portal with a small Node backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
